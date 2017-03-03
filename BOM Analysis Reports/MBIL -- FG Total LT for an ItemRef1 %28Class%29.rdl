@@ -1,0 +1,2286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.05566in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.30149in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.20149in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.85in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.67641in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.67641in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.67641in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.67641in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.67646in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.35508in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Blue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox22">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Blue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <Style>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Blue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <Style>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox24">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Blue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox24</rd:DefaultName>
+                      <Style>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox522">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>C0</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox522</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox523">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>C1</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox523</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox525">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>C1_4</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox525</rd:DefaultName>
+                      <Style>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox527">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>C1_5</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox527</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox529">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>C1_6</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox527</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox51">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Max LT</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox51</rd:DefaultName>
+                      <Style>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.18608in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox30">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Blue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox30</rd:DefaultName>
+                      <Style>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox198">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="ItemRef1: " &amp; Fields!tItemRef1.Value &amp; ", " &amp; Fields!ITEM_REF1_DESC.Value</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Blue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>192</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>1pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>9</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.76042in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>On canned report, cost is calculated with the following function and parameters</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value EvaluationMode="Constant">=Double.Parse(ReportLib.Calculation.CMLBCalculate( Fields!RolledMaterialCost.Value , Fields!ConfigurationQuantity.Value , Fields!RequiredQuantity.Value , Fields!QuantityType.Value , Fields!ParentItemLotSizeQuantity.Value , Fields!CostCodeComponent.Value , Fields!ScrapPercent.Value , Fields!ComponentType.Value ))</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BackgroundColor>AntiqueWhite</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>10</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.175in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox146">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox146</rd:DefaultName>
+                      <ZIndex>24</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox123">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox123</rd:DefaultName>
+                      <ZIndex>22</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ItemNumber">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ItemNumber.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ItemNumber</rd:DefaultName>
+                      <ZIndex>21</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ItemDescription">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ItemDescription.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ItemDescription</rd:DefaultName>
+                      <ZIndex>20</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox103">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(iif ((Fields!InEffectivityDate.Value &lt;= Today and Fields!OutEffectivityDate.Value &gt;= Today) , 
+
+		Double.Parse(ReportLib.Calculation.CMLBCalculate 
+			( Fields!AtThisLevelCost0_0B.Value
+			, Fields!ConfigurationQuantity.Value
+			, Fields!BillLevelQuantity.Value
+			, Fields!QuantityType.Value 
+			, Fields!ParentItemLotSizeQuantity.Value
+			, Fields!tCostCodeComponent0.Value 
+			, Fields!ScrapPercent.Value 
+			, Fields!ComponentType.Value )) 
+	,0
+
+))</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>c4</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox96">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum
+(iif (
+	(Fields!InEffectivityDate.Value &lt;= Today and Fields!OutEffectivityDate.Value &gt;= Today) , 
+
+	( Double.Parse(ReportLib.Calculation.CMLBCalculate 
+			(Fields!AtThisLevelCost1_1B.Value
+			, Fields!ConfigurationQuantity.Value
+			, Fields!BillLevelQuantity.Value
+			, Fields!QuantityType.Value 
+			, Fields!ParentItemLotSizeQuantity.Value
+			, Fields!tCostCodeComponent1.Value 
+			, Fields!ScrapPercent.Value 
+			, Fields!ComponentType.Value )))
+	,0 )
+)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>c4</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox106">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(iif ((Fields!InEffectivityDate.Value &lt;= Today and Fields!OutEffectivityDate.Value &gt;= Today) , 
+
+		Double.Parse(ReportLib.Calculation.CMLBCalculate 
+			( Fields!AtThisLevelCost1_4B.Value
+			, Fields!ConfigurationQuantity.Value
+			, Fields!BillLevelQuantity.Value
+			, Fields!QuantityType.Value 
+			, Fields!ParentItemLotSizeQuantity.Value
+			, Fields!tCostCodeComponent4.Value 
+			, Fields!ScrapPercent.Value 
+			, Fields!ComponentType.Value )) 
+	,0
+
+))</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>c4</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox223">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(iif ((Fields!InEffectivityDate.Value &lt;= Today and Fields!OutEffectivityDate.Value &gt;= Today) , 
+
+		Double.Parse(ReportLib.Calculation.CMLBCalculate 
+			( Fields!AtThisLevelCost1_5B.Value
+			, Fields!ConfigurationQuantity.Value
+			, Fields!RequiredQuantity.Value 
+			, Fields!QuantityType.Value 
+			, Fields!ParentItemLotSizeQuantity.Value
+			, Fields!tCostCodeComponent5.Value 
+			, Fields!ScrapPercent.Value 
+			, Fields!ComponentType.Value )) 
+	,0
+
+))</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>c4</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox238">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(iif ((Fields!InEffectivityDate.Value &lt;= Today and Fields!OutEffectivityDate.Value &gt;= Today) , 
+
+		Double.Parse(ReportLib.Calculation.CMLBCalculate 
+			( Fields!AtThisLevelCost1_6B.Value
+			, Fields!ConfigurationQuantity.Value
+			, Fields!RequiredQuantity.Value 
+			, Fields!QuantityType.Value 
+			, Fields!ParentItemLotSizeQuantity.Value
+			, Fields!tCostCodeComponent6.Value 
+			, Fields!ScrapPercent.Value 
+			, Fields!ComponentType.Value )) 
+	,0
+
+))</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>c4</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox218">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Max(Fields!cRunLT.Value)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox218</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="tItemRef1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!tItemRef1.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!tItemRef1.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember>
+                  <FixedData>true</FixedData>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="TopItem">
+                    <DocumentMapLabel>=Fields!ItemNumber.Value</DocumentMapLabel>
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ItemNumber.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="table1_Details_Group">
+                        <DataElementName>Detail</DataElementName>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!tItemRef1.Value</Value>
+                        </SortExpression>
+                        <SortExpression>
+                          <Value>=Fields!ItemNumber.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                          </Visibility>
+                        </TablixMember>
+                      </TablixMembers>
+                      <DataElementName>Detail_Collection</DataElementName>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                    <TablixMember>
+                      <KeepWithGroup>Before</KeepWithGroup>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                  </TablixMembers>
+                  <FixedData>true</FixedData>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>MBIL</DataSetName>
+        <PageBreak>
+          <BreakLocation>Between</BreakLocation>
+        </PageBreak>
+        <Top>0cm</Top>
+        <Height>1.3715in</Height>
+        <Width>7.14582in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>1.3715in</Height>
+    <Style>
+      <BottomBorder>
+        <Color>DarkBlue</Color>
+      </BottomBorder>
+    </Style>
+  </Body>
+  <Width>7.79074in</Width>
+  <Page>
+    <PageHeader>
+      <Height>0.99in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Function: MBIL/CMBL</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>textbox14</rd:DefaultName>
+          <Top>0.525in</Top>
+          <Left>0.00693in</Left>
+          <Height>0.50794cm</Height>
+          <Width>3.49206cm</Width>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>with Costs 0, 1, 4, 5, and 6 </Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>Navy</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.76664in</Top>
+          <Left>0.66859in</Left>
+          <Height>0.19375in</Height>
+          <Width>6.45357in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txt16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Multi-Level Total Lead Time </Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>Navy</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.54167in</Top>
+          <Left>1.86924in</Left>
+          <Height>0.25in</Height>
+          <Width>4.05227in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="textbox13">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>textbox13</rd:DefaultName>
+          <Left>6.43748in</Left>
+          <Height>0.175in</Height>
+          <Width>1.20833in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="textbox15">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!ReportName &amp; ", User ID: " &amp; User!UserID &amp; " printed on " &amp;Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Left>0.00693in</Left>
+          <Height>0.5in</Height>
+          <Width>1.775in</Width>
+          <ZIndex>4</ZIndex>
+          <DataElementName>PrintDate</DataElementName>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Image Name="image1">
+          <Source>Embedded</Source>
+          <Value>logo_capsonicbmp</Value>
+          <Sizing>Fit</Sizing>
+          <Left>2.55787in</Left>
+          <Height>0.5in</Height>
+          <Width>2.675in</Width>
+          <ZIndex>5</ZIndex>
+          <Style />
+        </Image>
+        <Line Name="Line1">
+          <Top>0.9675in</Top>
+          <Height>0in</Height>
+          <Width>7.79074in</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style />
+    </PageHeader>
+    <PageFooter>
+      <Height>0.175in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="RevisionLog">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Ver.1      02/01/2016</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Left>0.02221in</Left>
+          <Height>0.175in</Height>
+          <Width>1.67708in</Width>
+          <Visibility>
+            <Hidden>true</Hidden>
+          </Visibility>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageFooter>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.2in</LeftMargin>
+    <RightMargin>0.2in</RightMargin>
+    <TopMargin>0.1in</TopMargin>
+    <BottomMargin>0.1in</BottomMargin>
+    <ColumnSpacing>0in</ColumnSpacing>
+    <Style />
+  </Page>
+  <Description>Multi-Level Bill Inquiry</Description>
+  <Author>SoftBrands Manufacturing, Inc.</Author>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="FSDBMR">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=fsserv;Initial Catalog=FSDBMR</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>061de4fa-8107-40da-81b5-a13ea371758d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="MBIL">
+      <Query>
+        <DataSourceName>FSDBMR</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ItemRef1">
+            <Value>=Parameters!ItemRef1.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        t.ItemNumber, t.ItemDescription, t.ItemUM, t.ItemRevision, t.IsLotTraced, t.Planner, t.RunLeadTimeDays, t.FixedLeadTimeDays, t.PlanningPolicy, t.DrawingNumber, 
+                         t.DecimalPrecision, t.ItemReference1 AS tItemRef1, t.PackageType AS tPack, t.PiecesPerPackage AS tPiecesPer, t.PreferredStockroom AS tStkRm, 
+                         t.PreferredBin AS tBin, t.GatewayWorkCenter AS tGWWC, t.PlanningFenceDays AS tPFence, t.SetupCost AS tSetUp, t.LotSizeMinimum AS tLotSizeMin, 
+                         t.SafetyStockQuantity AS tSSQty, t.YieldPercentage AS tYieldPercent, tData.ExternalWIPQuantity, tData.InInspectionQuantity, tData.InternalWIPQuantity, 
+                         tData.InShippingQuantity, tData.OnHandQuantity, tData.OnHoldQuantity, 
+                         tData.InInspectionQuantity + tData.InternalWIPQuantity + tData.InShippingQuantity + tData.OnHandQuantity AS tAvailInv, tCostTypes.ItemKey AS tCostItemKey, 
+                         tCostTypes.tCostCodeComponent0, tCostTypes.tMatType0, tCostTypes.tCost0, tCostTypes.tMatCost0, tCostTypes.tLaborCost0, tCostTypes.tVarOHCost0, 
+                         tCostTypes.tFxOHCost0, tCostTypes.tAtThisLevelMaterialCost0, tCostTypes.tCostCodeComponent1, tCostTypes.tMatType1, tCostTypes.tCost1, 
+                         tCostTypes.tMatCost1, tCostTypes.tLaborCost1, tCostTypes.tVarOHCost1, tCostTypes.tFxOHCost1, tCostTypes.tAtThisLevelMaterialCost1, 
+                         tCostTypes.tCostCodeComponent4, tCostTypes.tLaborCost4, tCostTypes.tVarOHCost4, tCostTypes.tFxOHCost4, tCostTypes.tCostCodeComponent5, 
+                         tCostTypes.tLaborCost5, tCostTypes.tVarOHCost5, tCostTypes.tFxOHCost5, tCostTypes.tCostCodeComponent6, tCostTypes.tLaborCost6, tCostTypes.tVarOHCost6, 
+                         tCostTypes.tFxOHCost6, REPLACE(SPACE(m.BillLevel - 1), ' ', '.') + CONVERT(nvarchar(2), m.BillLevel) AS LevelOfChild, b.PointOfUseID, 
+                         b.OperationSequenceNumber, b.ComponentType, b.QuantityType, b.RequiredQuantity, b.LeadTimeOffsetDays, b.ScrapPercent, b.InEffectivityDate, 
+                         b.OutEffectivityDate, b.OutRevision, b.InRevision, m.ParentItemLotSizeQuantity, m.ConfigurationQuantity, m.BillLevelSort, m.BillLevelQuantity, 
+                         c.ItemNumber AS ComponentItemNumber, c.ItemDescription AS ComponentItemDescription, c.ItemUM AS ComponentItemUM, 
+                         c.MakeBuyCode AS ComponentItemMakeBuyCode, c.IsLotTraced AS cLotTraced, c.ItemReference1, c.Buyer AS cBuyer, c.PlanningPolicy AS cPlanPol, 
+                         c.RunLeadTimeDays AS cRunLT, c.PreferredBin AS cBin, c.PreferredStockroom AS cStkRm, c.DecimalPrecision AS cDec, c.GatewayWorkCenter AS cGWWC, 
+                         c.LotSizeMinimum AS cLotSizeMin, c.LotSizeMultiplier AS cLotSizeMult, c.OrderPolicy AS cOrdPol, cData.ExternalWIPQuantity AS cExtWIP, 
+                         cData.InShippingQuantity AS cInShip, cData.InInspectionQuantity AS cInInsp, cData.InternalWIPQuantity AS cIntWIP, cData.OnHandQuantity AS cOnHand, 
+                         cData.OnHoldQuantity AS cOnHold, cData.LastVendorID, 
+                         cData.InShippingQuantity + cData.InInspectionQuantity + cData.InternalWIPQuantity + cData.OnHandQuantity AS cAvailInv, m.ParentItemNumber, 
+                         m.ParentItemMakeBuyCode, m.ParentItemStatus, cCostTypes.ItemKey, cCostTypes.cCostCode0, cCostTypes.cCost0, cCostTypes.cMatCost0, 
+                         cCostTypes.cLaborCost0, cCostTypes.cVarOHCost0, cCostTypes.cFxOHCost0, cCostTypes.ATLMatCost0, 
+                         (CASE WHEN m.ParentItemMakeBuyCode = 'B' THEN 0 ELSE cCostTypes.ATLMatCost0 END) AS AtThisLevelCost0_0B, cCostTypes.cCostCode1, cCostTypes.cCost1, 
+                         cCostTypes.cMatCost1, cCostTypes.cLaborCost1, cCostTypes.cVarOHCost1, cCostTypes.cFxOHCost1, cCostTypes.ATLMatCost1, 
+                         (CASE WHEN m.ParentItemMakeBuyCode = 'B' THEN 0 ELSE cCostTypes.AtThisLevelCost1_1 END) AS AtThisLevelCost1_1B, cCostTypes.AtThisLevelCost1_1, 
+                         cCostTypes.cCostCode4, cCostTypes.cCostCode1_4, cCostTypes.cCostType4, cCostTypes.cMatCost4, cCostTypes.cLaborCost4, cCostTypes.cVarOHCost4, 
+                         cCostTypes.cFxOHCost4, cCostTypes.ATLMatCost4, cCostTypes.AtThisLevelCost1_4, 
+                         (CASE WHEN m.ParentItemMakeBuyCode = 'B' THEN 0 ELSE cCostTypes.AtThisLevelCost1_4 END) AS AtThisLevelCost1_4B, cCostTypes.cCostCode5, 
+                         cCostTypes.cCostType5, cCostTypes.cMatCost5, cCostTypes.cLaborCost5, cCostTypes.cVarOHCost5, cCostTypes.cFxOHCost5, cCostTypes.ATLMatCost5, 
+                         cCostTypes.AtThisLevelCost1_5, (CASE WHEN m.ParentItemMakeBuyCode = 'B' THEN 0 ELSE cCostTypes.AtThisLevelCost1_5 END) AS AtThisLevelCost1_5B, 
+                         cCostTypes.cCostCode6, cCostTypes.cCostType6, cCostTypes.cMatCost6, cCostTypes.cLaborCost6, cCostTypes.cVarOHCost6, cCostTypes.cFxOHCost6, 
+                         cCostTypes.ATLMatCost6, (CASE WHEN m.ParentItemMakeBuyCode = 'B' THEN 0 ELSE cCostTypes.AtThisLevelCost1_6 END) AS AtThisLevelCost1_6B, 
+                         cCostTypes.AtThisLevelCost1_6, _CAP_Class_Ref.ITEM_REF1_DESC, GETDATE() AS today, FS_Vendor.VendorName, t.IsSerialized, t.GroupTechnologyCode, 
+                         t.InventoryAccount, t.SalesAccount, t.IsLotTraceItemFIFO
+FROM            (SELECT DISTINCT ItemKey,
+                                                        (SELECT        CostCode
+                                                          FROM            FS_ItemCost AS FS_ItemCost_38 WITH (nolock)
+                                                          WHERE        (CostType = '0') AND (ItemKey = c.ItemKey)) AS cCostCode0,
+                                                        (SELECT        TotalRolledCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_37 WITH (nolock)
+                                                          WHERE        (CostType = '0') AND (ItemKey = c.ItemKey)) AS cCost0,
+                                                        (SELECT        RolledMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_36 WITH (nolock)
+                                                          WHERE        (CostType = '0') AND (ItemKey = c.ItemKey)) AS cMatCost0,
+                                                        (SELECT        RolledLaborCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_35 WITH (nolock)
+                                                          WHERE        (CostType = '0') AND (ItemKey = c.ItemKey)) AS cLaborCost0,
+                                                        (SELECT        RolledVariableOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_34 WITH (nolock)
+                                                          WHERE        (CostType = '0') AND (ItemKey = c.ItemKey)) AS cVarOHCost0,
+                                                        (SELECT        RolledFixedOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_33 WITH (nolock)
+                                                          WHERE        (CostType = '0') AND (ItemKey = c.ItemKey)) AS cFxOHCost0,
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_32 WITH (nolock)
+                                                          WHERE        (CostType = '0') AND (ItemKey = c.ItemKey)) AS ATLMatCost0,
+                                                        (SELECT        CostCode
+                                                          FROM            FS_ItemCost AS FS_ItemCost_31 WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) AS cCostCode1,
+                                                        (SELECT        TotalRolledCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_30 WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) AS cCost1,
+                                                        (SELECT        RolledMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_29 WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) AS cMatCost1,
+                                                        (SELECT        RolledLaborCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_28 WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) AS cLaborCost1,
+                                                        (SELECT        RolledVariableOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_27 WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) AS cVarOHCost1,
+                                                        (SELECT        RolledFixedOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_26 WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) AS cFxOHCost1,
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_25 WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) AS ATLMatCost1,
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_25 WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) AS AtThisLevelCost1_1,
+                                                        (SELECT        CostCode
+                                                          FROM            FS_ItemCost AS FS_ItemCost_24 WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) AS cCostCode4, (CASE WHEN
+                                                        (SELECT        CostCode
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) IS NOT NULL THEN
+                                                        (SELECT        CostCode
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) ELSE
+                                                        (SELECT        CostCode
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) END) AS cCostCode1_4,
+                                                        (SELECT        TotalRolledCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_23 WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) AS cCostType4,
+                                                        (SELECT        RolledMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_22 WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) AS cMatCost4,
+                                                        (SELECT        RolledLaborCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_21 WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) AS cLaborCost4,
+                                                        (SELECT        RolledVariableOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_20 WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) AS cVarOHCost4,
+                                                        (SELECT        RolledFixedOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_19 WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) AS cFxOHCost4,
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_18 WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) AS ATLMatCost4, (CASE WHEN
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) IS NOT NULL THEN
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '4') AND (ItemKey = c.ItemKey)) ELSE
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) END) AS AtThisLevelCost1_4,
+                                                        (SELECT        CostCode
+                                                          FROM            FS_ItemCost AS FS_ItemCost_16 WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) AS cCostCode5,
+                                                        (SELECT        TotalRolledCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_15 WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) AS cCostType5,
+                                                        (SELECT        RolledMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_14 WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) AS cMatCost5,
+                                                        (SELECT        RolledLaborCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_13 WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) AS cLaborCost5,
+                                                        (SELECT        RolledVariableOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_12 WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) AS cVarOHCost5,
+                                                        (SELECT        RolledFixedOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_11 WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) AS cFxOHCost5,
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_10 WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) AS ATLMatCost5, (CASE WHEN
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) IS NOT NULL THEN
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '5') AND (ItemKey = c.ItemKey)) ELSE
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) END) AS AtThisLevelCost1_5,
+                                                        (SELECT        CostCode
+                                                          FROM            FS_ItemCost AS FS_ItemCost_8 WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) AS cCostCode6,
+                                                        (SELECT        TotalRolledCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_7 WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) AS cCostType6,
+                                                        (SELECT        RolledMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_6 WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) AS cMatCost6,
+                                                        (SELECT        RolledLaborCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_5 WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) AS cLaborCost6,
+                                                        (SELECT        RolledVariableOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_4 WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) AS cVarOHCost6,
+                                                        (SELECT        RolledFixedOverheadCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_3 WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) AS cFxOHCost6,
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost AS FS_ItemCost_2 WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) AS ATLMatCost6, (CASE WHEN
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) IS NOT NULL THEN
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '6') AND (ItemKey = c.ItemKey)) ELSE
+                                                        (SELECT        AtThisLevelMaterialCost
+                                                          FROM            FS_ItemCost WITH (nolock)
+                                                          WHERE        (CostType = '1') AND (ItemKey = c.ItemKey)) END) AS AtThisLevelCost1_6
+                          FROM            _NoLock_FS_ItemCost AS c) AS cCostTypes RIGHT OUTER JOIN
+                         FS_MultiLevelBillAll AS m INNER JOIN
+                         FS_Item AS t WITH (readuncommitted) ON t.ItemKey = m.TopLevelItemKey ON cCostTypes.ItemKey = m.ComponentItemKey LEFT OUTER JOIN
+                         FS_ItemData AS cData LEFT OUTER JOIN
+                         FS_Vendor ON cData.LastVendorID = FS_Vendor.VendorID ON m.ComponentItemKey = cData.ItemKey LEFT OUTER JOIN
+                         FS_Item AS c WITH (readuncommitted) ON m.ComponentItemKey = c.ItemKey LEFT OUTER JOIN
+                         FS_ItemData AS tData ON m.TopLevelItemKey = tData.ItemKey LEFT OUTER JOIN
+                             (SELECT DISTINCT ItemKey,
+                                                             (SELECT        CostCode
+                                                               FROM            FS_ItemCost AS FS_ItemCost_47 WITH (nolock)
+                                                               WHERE        (CostType = '0') AND (ItemKey = t.ItemKey)) AS tCostCodeComponent0,
+                                                             (SELECT        CostType
+                                                               FROM            FS_ItemCost AS FS_ItemCost_46 WITH (nolock)
+                                                               WHERE        (CostType = '0') AND (ItemKey = t.ItemKey)) AS tMatType0,
+                                                             (SELECT        TotalRolledCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_45 WITH (nolock)
+                                                               WHERE        (CostType = '0') AND (ItemKey = t.ItemKey)) AS tCost0,
+                                                             (SELECT        RolledMaterialCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_44 WITH (nolock)
+                                                               WHERE        (CostType = '0') AND (ItemKey = t.ItemKey)) AS tMatCost0,
+                                                             (SELECT        RolledLaborCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_43 WITH (nolock)
+                                                               WHERE        (CostType = '0') AND (ItemKey = t.ItemKey)) AS tLaborCost0,
+                                                             (SELECT        RolledVariableOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_42 WITH (nolock)
+                                                               WHERE        (CostType = '0') AND (ItemKey = t.ItemKey)) AS tVarOHCost0,
+                                                             (SELECT        RolledFixedOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_41 WITH (nolock)
+                                                               WHERE        (CostType = '0') AND (ItemKey = t.ItemKey)) AS tFxOHCost0,
+                                                             (SELECT        AtThisLevelMaterialCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_40 WITH (nolock)
+                                                               WHERE        (CostType = '0') AND (ItemKey = t.ItemKey)) AS tAtThisLevelMaterialCost0,
+                                                             (SELECT        CostCode
+                                                               FROM            FS_ItemCost AS FS_ItemCost_47 WITH (nolock)
+                                                               WHERE        (CostType = '1') AND (ItemKey = t.ItemKey)) AS tCostCodeComponent1,
+                                                             (SELECT        CostType
+                                                               FROM            FS_ItemCost AS FS_ItemCost_46 WITH (nolock)
+                                                               WHERE        (CostType = '1') AND (ItemKey = t.ItemKey)) AS tMatType1,
+                                                             (SELECT        TotalRolledCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_45 WITH (nolock)
+                                                               WHERE        (CostType = '1') AND (ItemKey = t.ItemKey)) AS tCost1,
+                                                             (SELECT        RolledMaterialCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_44 WITH (nolock)
+                                                               WHERE        (CostType = '1') AND (ItemKey = t.ItemKey)) AS tMatCost1,
+                                                             (SELECT        RolledLaborCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_43 WITH (nolock)
+                                                               WHERE        (CostType = '1') AND (ItemKey = t.ItemKey)) AS tLaborCost1,
+                                                             (SELECT        RolledVariableOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_42 WITH (nolock)
+                                                               WHERE        (CostType = '1') AND (ItemKey = t.ItemKey)) AS tVarOHCost1,
+                                                             (SELECT        RolledFixedOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_41 WITH (nolock)
+                                                               WHERE        (CostType = '1') AND (ItemKey = t.ItemKey)) AS tFxOHCost1,
+                                                             (SELECT        AtThisLevelMaterialCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_41 WITH (nolock)
+                                                               WHERE        (CostType = '1') AND (ItemKey = t.ItemKey)) AS tAtThisLevelMaterialCost1,
+                                                             (SELECT        CostCode
+                                                               FROM            FS_ItemCost AS FS_ItemCost_47 WITH (nolock)
+                                                               WHERE        (CostType = '4') AND (ItemKey = t.ItemKey)) AS tCostCodeComponent4,
+                                                             (SELECT        RolledLaborCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_43 WITH (nolock)
+                                                               WHERE        (CostType = '4') AND (ItemKey = t.ItemKey)) AS tLaborCost4,
+                                                             (SELECT        RolledVariableOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_42 WITH (nolock)
+                                                               WHERE        (CostType = '4') AND (ItemKey = t.ItemKey)) AS tVarOHCost4,
+                                                             (SELECT        RolledFixedOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_44 WITH (nolock)
+                                                               WHERE        (CostType = '4') AND (ItemKey = t.ItemKey)) AS tFxOHCost4,
+                                                             (SELECT        CostCode
+                                                               FROM            FS_ItemCost AS FS_ItemCost_47 WITH (nolock)
+                                                               WHERE        (CostType = '5') AND (ItemKey = t.ItemKey)) AS tCostCodeComponent5,
+                                                             (SELECT        RolledLaborCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_43 WITH (nolock)
+                                                               WHERE        (CostType = '5') AND (ItemKey = t.ItemKey)) AS tLaborCost5,
+                                                             (SELECT        RolledVariableOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_42 WITH (nolock)
+                                                               WHERE        (CostType = '5') AND (ItemKey = t.ItemKey)) AS tVarOHCost5,
+                                                             (SELECT        RolledFixedOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_45 WITH (nolock)
+                                                               WHERE        (CostType = '5') AND (ItemKey = t.ItemKey)) AS tFxOHCost5,
+                                                             (SELECT        CostCode
+                                                               FROM            FS_ItemCost AS FS_ItemCost_47 WITH (nolock)
+                                                               WHERE        (CostType = '6') AND (ItemKey = t.ItemKey)) AS tCostCodeComponent6,
+                                                             (SELECT        RolledLaborCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_43 WITH (nolock)
+                                                               WHERE        (CostType = '6') AND (ItemKey = t.ItemKey)) AS tLaborCost6,
+                                                             (SELECT        RolledVariableOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_42 WITH (nolock)
+                                                               WHERE        (CostType = '6') AND (ItemKey = t.ItemKey)) AS tVarOHCost6,
+                                                             (SELECT        RolledFixedOverheadCost
+                                                               FROM            FS_ItemCost AS FS_ItemCost_46 WITH (nolock)
+                                                               WHERE        (CostType = '6') AND (ItemKey = t.ItemKey)) AS tFxOHCost6
+                               FROM            _NoLock_FS_ItemCost AS t) AS tCostTypes ON m.TopLevelItemKey = tCostTypes.ItemKey LEFT OUTER JOIN
+                         _CAP_Class_Ref ON t.ItemReference1 = _CAP_Class_Ref.ITEM_REF1 LEFT OUTER JOIN
+                         FS_BillOfMaterial AS b WITH (readuncommitted) ON m.BillOfMaterialKey = b.BillOfMaterialKey
+WHERE        (t.InventoryAccount = '1-00-1240') AND (t.ItemReference1 IN (@ItemRef1))
+ORDER BY t.ItemNumber, cAvailInv, m.BillLevelSort</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ItemNumber">
+          <DataField>ItemNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemDescription">
+          <DataField>ItemDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemUM">
+          <DataField>ItemUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemRevision">
+          <DataField>ItemRevision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Planner">
+          <DataField>Planner</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsLotTraced">
+          <DataField>IsLotTraced</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RunLeadTimeDays">
+          <DataField>RunLeadTimeDays</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FixedLeadTimeDays">
+          <DataField>FixedLeadTimeDays</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="PlanningPolicy">
+          <DataField>PlanningPolicy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DrawingNumber">
+          <DataField>DrawingNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ExternalWIPQuantity">
+          <DataField>ExternalWIPQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="InInspectionQuantity">
+          <DataField>InInspectionQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="InternalWIPQuantity">
+          <DataField>InternalWIPQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="InShippingQuantity">
+          <DataField>InShippingQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="OnHandQuantity">
+          <DataField>OnHandQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="OnHoldQuantity">
+          <DataField>OnHoldQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tCost0">
+          <DataField>tCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tMatCost0">
+          <DataField>tMatCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tLaborCost0">
+          <DataField>tLaborCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tLotSizeMin">
+          <DataField>tLotSizeMin</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tVarOHCost0">
+          <DataField>tVarOHCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tSSQty">
+          <DataField>tSSQty</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tFxOHCost0">
+          <DataField>tFxOHCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tItemRef1">
+          <DataField>tItemRef1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tYieldPercent">
+          <DataField>tYieldPercent</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="tMatType0">
+          <DataField>tMatType0</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tAtThisLevelMaterialCost0">
+          <DataField>tAtThisLevelMaterialCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tAvailInv">
+          <DataField>tAvailInv</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tCostItemKey">
+          <DataField>tCostItemKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tCostCodeComponent0">
+          <DataField>tCostCodeComponent0</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LevelOfChild">
+          <DataField>LevelOfChild</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PointOfUseID">
+          <DataField>PointOfUseID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OperationSequenceNumber">
+          <DataField>OperationSequenceNumber</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ComponentType">
+          <DataField>ComponentType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuantityType">
+          <DataField>QuantityType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RequiredQuantity">
+          <DataField>RequiredQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="LeadTimeOffsetDays">
+          <DataField>LeadTimeOffsetDays</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ScrapPercent">
+          <DataField>ScrapPercent</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="tCostCodeComponent1">
+          <DataField>tCostCodeComponent1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentItemNumber">
+          <DataField>ComponentItemNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentItemDescription">
+          <DataField>ComponentItemDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentItemUM">
+          <DataField>ComponentItemUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentItemMakeBuyCode">
+          <DataField>ComponentItemMakeBuyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cExtWIP">
+          <DataField>cExtWIP</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cInShip">
+          <DataField>cInShip</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cInInsp">
+          <DataField>cInInsp</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cIntWIP">
+          <DataField>cIntWIP</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cOnHand">
+          <DataField>cOnHand</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cOnHold">
+          <DataField>cOnHold</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tCostCodeComponent4">
+          <DataField>tCostCodeComponent4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cMatCost0">
+          <DataField>cMatCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cLaborCost0">
+          <DataField>cLaborCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cVarOHCost0">
+          <DataField>cVarOHCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ParentItemLotSizeQuantity">
+          <DataField>ParentItemLotSizeQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tCostCodeComponent5">
+          <DataField>tCostCodeComponent5</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ConfigurationQuantity">
+          <DataField>ConfigurationQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cFxOHCost0">
+          <DataField>cFxOHCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cMatCost1">
+          <DataField>cMatCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tCostCodeComponent6">
+          <DataField>tCostCodeComponent6</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cLaborCost1">
+          <DataField>cLaborCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cFxOHCost1">
+          <DataField>cFxOHCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cVarOHCost1">
+          <DataField>cVarOHCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cMatCost4">
+          <DataField>cMatCost4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cLaborCost4">
+          <DataField>cLaborCost4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cVarOHCost4">
+          <DataField>cVarOHCost4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cFxOHCost4">
+          <DataField>cFxOHCost4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cBuyer">
+          <DataField>cBuyer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cLotTraced">
+          <DataField>cLotTraced</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cAvailInv">
+          <DataField>cAvailInv</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ItemReference1">
+          <DataField>ItemReference1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cPlanPol">
+          <DataField>cPlanPol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cRunLT">
+          <DataField>cRunLT</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cBin">
+          <DataField>cBin</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cLotSizeMin">
+          <DataField>cLotSizeMin</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cStkRm">
+          <DataField>cStkRm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cLotSizeMult">
+          <DataField>cLotSizeMult</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cOrdPol">
+          <DataField>cOrdPol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cDec">
+          <DataField>cDec</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="cGWWC">
+          <DataField>cGWWC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tPack">
+          <DataField>tPack</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tPiecesPer">
+          <DataField>tPiecesPer</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tStkRm">
+          <DataField>tStkRm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tBin">
+          <DataField>tBin</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tGWWC">
+          <DataField>tGWWC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tPFence">
+          <DataField>tPFence</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ITEM_REF1_DESC">
+          <DataField>ITEM_REF1_DESC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillLevelSort">
+          <DataField>BillLevelSort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tSetUp">
+          <DataField>tSetUp</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cCostCode0">
+          <DataField>cCostCode0</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ATLMatCost0">
+          <DataField>ATLMatCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cCostCode1">
+          <DataField>cCostCode1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ATLMatCost1">
+          <DataField>ATLMatCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cCostCode4">
+          <DataField>cCostCode4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cCostType4">
+          <DataField>cCostType4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cCostCode1_4">
+          <DataField>cCostCode1_4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ATLMatCost4">
+          <DataField>ATLMatCost4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost1_4">
+          <DataField>AtThisLevelCost1_4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="today">
+          <DataField>today</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="cCostCode5">
+          <DataField>cCostCode5</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cCostType5">
+          <DataField>cCostType5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cMatCost5">
+          <DataField>cMatCost5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cLaborCost5">
+          <DataField>cLaborCost5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cVarOHCost5">
+          <DataField>cVarOHCost5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cFxOHCost5">
+          <DataField>cFxOHCost5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ATLMatCost5">
+          <DataField>ATLMatCost5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost1_5">
+          <DataField>AtThisLevelCost1_5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cCostCode6">
+          <DataField>cCostCode6</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cCostType6">
+          <DataField>cCostType6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cMatCost6">
+          <DataField>cMatCost6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost0_0B">
+          <DataField>AtThisLevelCost0_0B</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cLaborCost6">
+          <DataField>cLaborCost6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cVarOHCost6">
+          <DataField>cVarOHCost6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cFxOHCost6">
+          <DataField>cFxOHCost6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ATLMatCost6">
+          <DataField>ATLMatCost6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost1_6">
+          <DataField>AtThisLevelCost1_6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="BillLevelQuantity">
+          <DataField>BillLevelQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="LastVendorID">
+          <DataField>LastVendorID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost1_1B">
+          <DataField>AtThisLevelCost1_1B</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InEffectivityDate">
+          <DataField>InEffectivityDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="OutEffectivityDate">
+          <DataField>OutEffectivityDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="OutRevision">
+          <DataField>OutRevision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InRevision">
+          <DataField>InRevision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost1_4B">
+          <DataField>AtThisLevelCost1_4B</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost1_5B">
+          <DataField>AtThisLevelCost1_5B</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost1_6B">
+          <DataField>AtThisLevelCost1_6B</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="IsSerialized">
+          <DataField>IsSerialized</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GroupTechnologyCode">
+          <DataField>GroupTechnologyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InventoryAccount">
+          <DataField>InventoryAccount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SalesAccount">
+          <DataField>SalesAccount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsLotTraceItemFIFO">
+          <DataField>IsLotTraceItemFIFO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemKey">
+          <DataField>ItemKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cCost1">
+          <DataField>cCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AtThisLevelCost1_1">
+          <DataField>AtThisLevelCost1_1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="cCost0">
+          <DataField>cCost0</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tAtThisLevelMaterialCost1">
+          <DataField>tAtThisLevelMaterialCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tMatType1">
+          <DataField>tMatType1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tCost1">
+          <DataField>tCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tMatCost1">
+          <DataField>tMatCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tLaborCost4">
+          <DataField>tLaborCost4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tVarOHCost4">
+          <DataField>tVarOHCost4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tLaborCost1">
+          <DataField>tLaborCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tFxOHCost4">
+          <DataField>tFxOHCost4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tLaborCost5">
+          <DataField>tLaborCost5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ParentItemNumber">
+          <DataField>ParentItemNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tVarOHCost1">
+          <DataField>tVarOHCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tVarOHCost5">
+          <DataField>tVarOHCost5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ParentItemMakeBuyCode">
+          <DataField>ParentItemMakeBuyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tFxOHCost5">
+          <DataField>tFxOHCost5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ParentItemStatus">
+          <DataField>ParentItemStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tFxOHCost1">
+          <DataField>tFxOHCost1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tLaborCost6">
+          <DataField>tLaborCost6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tVarOHCost6">
+          <DataField>tVarOHCost6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="tFxOHCost6">
+          <DataField>tFxOHCost6</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="ItemRef1">
+      <DataType>String</DataType>
+      <Prompt>Enter Item Ref1(s)</Prompt>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo_capsonic">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logo_capsonicbmp">
+      <MIMEType>image/bmp</MIMEType>
+      <ImageData>Qk2+bwAAAAAAADYEAAAoAAAAKAEAAF0AAAABAAgAAAAAAIhrAADEDgAAxA4AAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwADA3MAA8MqmAAAgQAAAIGAAACCAAAAgoAAAIMAAACDgAABAAAAAQCAAAEBAAABAYAAAQIAAAECgAABAwAAAQOAAAGAAAABgIAAAYEAAAGBgAABggAAAYKAAAGDAAABg4AAAgAAAAIAgAACAQAAAgGAAAICAAACAoAAAgMAAAIDgAACgAAAAoCAAAKBAAACgYAAAoIAAAKCgAACgwAAAoOAAAMAAAADAIAAAwEAAAMBgAADAgAAAwKAAAMDAAADA4AAA4AAAAOAgAADgQAAA4GAAAOCAAADgoAAA4MAAAODgAEAAAABAACAAQABAAEAAYABAAIAAQACgAEAAwABAAOAAQCAAAEAgIABAIEAAQCBgAEAggABAIKAAQCDAAEAg4ABAQAAAQEAgAEBAQABAQGAAQECAAEBAoABAQMAAQEDgAEBgAABAYCAAQGBAAEBgYABAYIAAQGCgAEBgwABAYOAAQIAAAECAIABAgEAAQIBgAECAgABAgKAAQIDAAECA4ABAoAAAQKAgAECgQABAoGAAQKCAAECgoABAoMAAQKDgAEDAAABAwCAAQMBAAEDAYABAwIAAQMCgAEDAwABAwOAAQOAAAEDgIABA4EAAQOBgAEDggABA4KAAQODAAEDg4ACAAAAAgAAgAIAAQACAAGAAgACAAIAAoACAAMAAgADgAIAgAACAICAAgCBAAIAgYACAIIAAgCCgAIAgwACAIOAAgEAAAIBAIACAQEAAgEBgAIBAgACAQKAAgEDAAIBA4ACAYAAAgGAgAIBgQACAYGAAgGCAAIBgoACAYMAAgGDgAICAAACAgCAAgIBAAICAYACAgIAAgICgAICAwACAgOAAgKAAAICgIACAoEAAgKBgAICggACAoKAA
+gKDAAICg4ACAwAAAgMAgAIDAQACAwGAAgMCAAIDAoACAwMAAgMDgAIDgAACA4CAAgOBAAIDgYACA4IAAgOCgAIDgwACA4OAAwAAAAMAAIADAAEAAwABgAMAAgADAAKAAwADAAMAA4ADAIAAAwCAgAMAgQADAIGAAwCCAAMAgoADAIMAAwCDgAMBAAADAQCAAwEBAAMBAYADAQIAAwECgAMBAwADAQOAAwGAAAMBgIADAYEAAwGBgAMBggADAYKAAwGDAAMBg4ADAgAAAwIAgAMCAQADAgGAAwICAAMCAoADAgMAAwIDgAMCgAADAoCAAwKBAAMCgYADAoIAAwKCgAMCgwADAoOAAwMAAAMDAIADAwEAAwMBgAMDAgADAwKAA8Pv/AKSgoACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9vf39/f39/f39wj//////////////////////////////wft9/fu9/f37ff39/f39/f39/f39/f3B/b/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////akU1NLU1NTU1NLSqT2///////////////////////////3U1NTS1NLU1NTU1NTU1NTS1NTS1NTU1NKm//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////29qWmVU0NDQ0NDUxLCqT/////////////////////////B5ydTU1NTU1NTU1NTU1NTU1NTQ0NDQ0NTFRKB//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2B++mn04ODg8ODQFLCvf////////////////////////upZ5XRk9OTkZOTkZORkdHRw8PDw8PDg4BVVMI////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2B++mn08P+fkPDgFLCgf//////////////////////6WmnldPT09PT1efTg5PT09P+fn5+fn5Dw1UW//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2B6+nXw/5+fkPDQELSgf///////////////////8IpaeXT0dPT0+Xp6dODk9PR0f5+fn5+fkOTVSk//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8I
+B6+nVw/5+fkPAQwLU/cHCAgIBwcICAgHCAcICPeln5dPT09Pl6enp1cNRk9PT0f5+fn5Dw5NUwf///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8IB6enVw/5+Q8OAQwLU1NTU1NTU1NTU1NTU1NUVJ6XT09PT0+fp6+nVg0NT09PT/n5+fkPDVVTCP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8HB6afVw/5+fkPDQ1NTU1NTU1NTU1NTU1NTU1NTk9PR09OTqevr6dWAQFOT09P+fn5+Q8NVZz2////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YH76efTw/5+fkPDg4ODg4ODQ0ODQ4ODg5OTkZOR09PRgEBp++vpw0BAQENT09P+fn5Dk1Upf////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YH75+fD/n5+fn5+Q8PDk9XTk5WTk5OTlZWV1dPT05NTFXv76cMAQEBAQEOT09PTw8OVVMH//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YH76dfD/n5+fn5Dw5fX5+f
+n1+fn5+fn5+fn0+Xp6ev7++vVQEBAQEBDk9PT09PTw1UUwj///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHr6dXD/n5+fkODVVdpa6urq6urq6u76efV5+vr+/v7+9eAQEBAQEPDw8P+U9GTVSc/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wgHpp9X+fn5+Q8BCwpTCPb29vb29gelp59Xp6+v7+/v710LAQEBDg/5Dw9PT0ZNVPf/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wfvp59P+fn5Dw4BC0qk////////7feen5+n7+/v7/b2p1VVAQEODw8P+flPDVVTB///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Bwemp1cP+fn5DwEMSqT///b////tpp+fn6+v7+/v9vamVVUBDg8P+fkPDw8NVVMH////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////B++mn0/5+fkPDgELCvf///////fvp6enr+/v7+/29u/v
+Tg4PDw8PD/kPDk1VU/b////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2B++nn0/5+fkPDQFLSgf////29++np6enr+/v7+/v76dOD0/5Dw/5D1dPTVWc///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2B6+nXw/5+fkPDQEKUgj//wiupp9XX1+nr+/27++vp59fVw8P+fn5Dw5VVPf/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2B66nXw/5+fkOAQtKW/b/B66mn1+fp6/v7/bvr5+np6dXDw8P+Q8PDl1TB/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8IB6anVw/5+fkOAQsKpPb3pp9fX6enr+/v7++eVp+vp1cPDg8PT05NXVP2//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8H76afVw/5+fkOAQsKpaWvn19fp6+nVabv76enr++vVw9XTw0ODQxTnP//////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8H76efTw/5+Q8OAUtKpaefX5+np14LClWnp6/v7+9fD1+fDQEBTFP3//////////////////////////b///////////b2//////////b/9vb29vb29vb///b////////29v/////29v//////////9vb///////b2///////2//////////b2//////b2///////29vb29vb2//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YH76efTw/5+Q8NAUump59fX59fAQEBC0yfnu/vp1dPn6dWAQFUUwf/////////////////////CKRSSVKkB5v3////B0n3//////+bUvakSUlJSUkAW/8HSaT////2W1II///3UklJUqT2///291JJSVKk9v/2UlL2/////5tJCP////8ISZv//webSUlS9///9lJJSUlJSQD3////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////9gf3paWlpaWlpaWlpaWlpKSlpaWlpaSkpKWlpaWkpaSlr6dfD/n5+Q4NTZ6fX1dXn1YBTVaXl5eXn5+fV5efp19WVV1b9v////////////////////ZSAKT3mwAAAPf///8ISUkICAgI9wBb/5sAm/f39/cH//cApP///6QApP//mwBS9/ebAFL2/6QAUvf3pABb9vYASf//////9wCkCAgICKQA9/8HAFL391IApP/2AACk9/f39wf//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wecU1RUVFRUVFRUVFRUVFRUVFRUVFRUVFRTVFRUVFRUVFWeX19fD/n5+Q4NTk9XV1dXAQFOl5eXl4+Xj4+Pl5efn1dVXKT/////////////////////BwBb///3AABS9v////+kAElJAEkAAAf/pAAH////////9wCk///3AJv//wcAm//////3AKT/pFv2////UgAI9gBS9v/////2UgBJSUlJAFL29lJJ9v//9lJb9v9JSfb///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////akVJ5WTg4NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDl9XD/n5+Q8PD09PTw4NT0+Xj5ePl4+Pj4+PT1dfVlVU9//////////////////////2Ukn3pABSpFII////
+/whJUgcH9wBS//+kAPf29vb2///3AFKkWwBS9v//mwAH//////ZJUvb///YH91sAUvb2SQBSUlKkCP/3AJsHB5sA9/8HAJv/////9vb/9klJCPb29v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////pFymTg4ODw8PDw8ODg4ODw8ODg5OTk5OTk5OT08ODw8PDw8PDw4OT19X+fn5+fn5T09PDk5Xj4+Pj5eXl4+Pj09PT1dWnVMH///////////////////////2mwAAAAf//////////5tJCP/3APf//6QASVJSUlII//cASVJSUklSB/9bAAf/////9klJ9v/3SQAASZsI//YAAKSkmwBS9vZJW///W0n2/wcAm//////////2SQBSUlJSpP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wecp04PD/n5+fn5+fn5Dw8PDw9XX6enp6enp6dfn1cPD/n5+fn5+Q8PT59P+fn5+fn5Tw5HT0+Pj5eXT0+Xj4+PT09PTladm/b///////////////////////+kAFJSUgf2////////BwCk/1JS9v//mwBbpKSk9/b/9wCk////BwBb/6QAB//////2AFv/9wBJpAf29vb/9gBS////pAD3/6QABwcApP//CABb//////YI//ZJAKSkpKT3////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////965fT/n5+fn5+fn5+fkPD/kPD1anp6+ur66mr69fVw4P+fn5+fn5+Q8PV19P+fn5+fn5D09PT09Pn6dOTldPj09PT09OVZyk////////////////////////CABJ9ggAUv//////////W1L3APf///+kAAf////////3AKT///8IAFL/CABSCP//9lsAB/+kAPf//wdJpP/2AFL2//+bAPf/CACbmwAI////WwAH//8ISVL2/0lJ9v////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////at71dP+fn5+Q8PDw8PDw9PDw8ODVVT7gcHBweu76dfTw8PDw8PD/kP+Q8OV19P+fn5+flPT09PT0afn04BRk9PT09PT05VUwf////////////////////////2WwBSUgCk//////////8HAABJ9v///5sAUlJbW1L3//cASVtbUklJB///90lJUlJJAPf//whSSVJSSUkH//YAAFJSUgBb9v//mwAAm//////2UgBSUklJ9//2AABSUltSW/b///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////fvX1f5+fn5T1dXV1dXV08PDw4NVVMI//////b3r6efV1dXV1dXT09PT09PX18P+fn5+U9PT09PV59XDQEOR09PT09PTVVT9v/////////////////////////295ubB/////////////akm/f/////B5ubW1tbWwf/
+B5ubW1ubpAf/////CPebm/cI//////b3m5v3CP//9qSbW5ub9/b///8Im5sH///////2B6SbpAj///akm1tbW1ub9v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////B++nVw/5+flXV1dPT08PDw8PDg1VU/f///////fvp6dfX19fV1dXV1dXV1dXX0/5+fn5T09PV1+fX04NDg4PR09PT09NVVKbCP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8H7qdXD/n5+VdXV09PTw8PDw8ODVVL9//2////9++vp19fX19fX1dXV1dXV1dfT/n5+fn5T09XX19fTw4ODw5PT09PTk2dUpsI////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////aur1dP+fn5+fn5+Q8PDw9XV19fpp1b//////8H7++nn1+fX1dXV1dXV1dXV1dXD/n5+flPT1dXV19XDw8PTU1VVVVVVJylUqT///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////fvX1f5+fn5+fn5Dw9XV1dfn6emplL2//////b376dfV19XV1dXV1dXV1dXV1cP+fn5+flPT1dXV1dPDw4MCgoKVFSc9/dSB///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////B++nVw/5+fn5+fn5T1dXX1+np6evU/f///////fvr6dfX1dXV1dXV1dXT09XVw/5+fn5+U9PV1dPT1cPD1UKAABTU1ykm1Kb9v//////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////27q9fT/n5+fn5T09XV19fn6enp6+cm///////Bwfvr6dfX19fX1dXV1dXV59fV09PD09PV1dOTk9XV1dXXgoAAAoKCgBJUlKk//////////////////////////YI9v////b29v//////9gj29gj2///////////2CPb2//////////YI9v//////9vb////2CPb///b2///////2CPb///////b29v//////9gj2////9gj2////////9vb2//////////b29v//////9vb///b2///29v//////9gj2//////////b29v////b29v/////2CP//////9ggICAgICPb/////////////////////////////////////////////////9v/3719XD/n5+U9XV1+fp6enp6enp65TCP/////29++nX1dXV1dPDw8PV1dXV1dfV1dXX1+enl5eXp6fnp6mpVtbU1NSAAAAW1II//////////////////////abSQBJWwf/BwCk//////9bSfakAPf////////2pFJJAFKb9v////dSSQBJWwf///ZJpP//9lsAUv/2SVL2//8HUkkAUqT2////B0mb//////+kSQf/B1tJAElbB/////8HAJv///////dSSQBSmwj///9SW//2UqT/CEmk////B1JJAElbB///////mwAH////9wCk////9kkA9////whJAAAAAAAAB////////////////////////////////////////////////////wfv
+p1cP+flPT1efp6enp6enp6em75wH//////b3719XDw8PDw8PDw8PDw8PT09PDlZepqalpqampqampqau9wf19wdSAABSUvf////////////////////2Ukn3B6QAAAf2UkkHBwcH9wCb/6QA9////////5sAWwcHpABS9v/3AFL3B/dSAAf/9kmk///3AABS//YASfb/9wBS9wdbAJv2////WwD3BwcH90lS9vZSAKQH90lJ9v///wcAW/////+bAFsHB6RJSQj/9lJS/wcAUvYIAKT///cAUvcH91IA9/////9bAAf////3AKT////3AABS////CABJBwcHBwf2////////////////////////////////////////////////////CO6nVw8PD09Xn5+fp6enp6enp56vpaT//////wfvXlcODg8PDw8PDw8PDw8PDw4NVUul9gj2CAj29ggIB6T3pJtbpFIAAJtb9////////////////////6QA9/////dSB//3AAAASUkAAAf/pAD39vb/////pKT/////UgAI9gBS9v///whJUvb2SaT/9lJbUlL/9gBS9vZJUvb///9bW/b///8HAAAASQAAAPf/BwCk////pAAH////BwBb////BwCb/////wcAm//2UlL/pFJJBwgApP/2SVL2////9klS9v///1sAB/////cApP//9lJSpAAH//8IAFL/////////////////////////////////////////////////////////////9+9eTw9XV5+np6enr6+vr6enp6ZcU/b/////CO6nXlZXV1dXV05PT09PT09PVk1UVJz////////////29wf3pPekpPekpFsI///////////////////2UgD2//////////ZJSQcI9wBb//+kAElJSVL3//////b3pFIAW/b3AKT//////1sAB/ZJpP+kSQhbUv/2AFL2BwCb////////
+//////9SAAcHB0lJ9v/3AKT////3APf///8HAFv///+kAAf/////9klJ9v9SUvZSB5ubCACk//cApP//////mwAH////WwAH////9wCk//8HAPf2SVv//wgAUgj29gj2///////////////////////////////////////////////////////3759XV1dPV5+np++vr6+vr6efVVVTB//////2B++mpqanp6empqenp6enp6empqZcpP/////////////2B/f39/fuB/f3CP////////////////////9SAPb//////////6QAB//3APf//6QAW/ekUgCk//akAAAAUqT2//cApP//////mwAH9kmk9kmk/1tJ//YASfYHAKT///////////////cA9/8HAKT///cApP///6QA9////wcAW////5sAB//////2Ukn2/1Jb90n290kHAKT/9wCk//////+kAAf///9bAAf////3AKT//1tJ9v+bAAj/CAAASUlJSaT//////////////////////////////////////////////////////wju71dXV09Xn6en7+/v7+/vp15WXlz3///////2CPYH7+/v7+/v7+/v7+/v7+/urqX2//////////////////b/9v///////////////////////////5sACP////YH9v//CACb9lJS////pAAH///2AFL2pABS9wj29vb/BwCb//////9SSfb2SaSkSfb/W1L/9gBJ9vYAW/////8HB/b/////9klS9ltJCP//9wCk////pAD3////BwBb////9wD3//////ZJUv/2UlJbm//2SaQApP8IAFv//////1sACP///1sAB/////cApP8IAJv//wcApP8IAEn39/f3B///////////////////////////////////////////////////////9vfvVk5PV1efn5+n7+/vr6enn19e
+pqX2////////96WlpaWlpaWlpaWlnaWcpKSkpPf2////////////////////////////////////////////////BwBS9vb2mwD3////m0mkAPf///+kAPf//wcAUv+kAPf///cApP/2WwD39v/2pACk//ZJUkn3//9SUv/2AFL2/6QA9/b/B0lS9v//////pAD3AKT////3AKT///+kAPf/9v8HAFv29v/2SUkH9v8IWwAH//ZSAAD3//9bAACk//+bAPf29vakAKT///b2WwAH//b/9wCk/6QAB///9lJJ9ggAUv/////////////////////////////////////////////////////////////2B++fVw4ODg5PV1+np6efn19fV1ZmUwf//////wekpV1dXV1dXV1dXV1dnZ2cnZ1UCpz/////////////////////////////////////////////////90lJUkkApPb///8HAABJ9v///6QASVJSAEkH/whSSVJSAFII///2WwBSUkkApPb/9kkAUv///1tJ//YASfb/9ptJUlJJSQf///////8ISQAAB/////cApP///6QA9/ZSUkkAAFJSpP8HUgBSUklJ9////1IASfb///cAAKT///ZbAElSUkmb9v+kUlIAAElSUgj3AKT2SVL/////9wD3CAAAUlJSUlv2////////////////////////////////////////////////////9v8H7qdfDxcXX1dXV1+fp6dfX19fVV5cpf////b297dmVhUODg4NDU1NVlZWVlZWVlVUSgf/////////////////////////////////////////////////CPek9wj////////3pAf/////B6SkpKT3CP////YHpKQH9v//////B/ek9wj/////96QI////9/f//6T39v///wf3pPf2///////////3pPf/////B6QH////
+B6QI9qSkpKSkpKT3///2B6Sk9/b////296T3////9qSkB/////8H96T3CP////ekpKSkpKSk9gikB/akB//////2pAf296SkpKSk9/b///////////////////////////////////////////////////////alp1ZfX19fX1dfp6+vt7evr6+vr6Zb9v//9vYI769nX1dXV1dXV1dXV1dfX19XVVVUpP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////evXl9fFw5XZ6+3t+/v7+/v7+/vB1sI////9vYIt69nX19fX19fX19fX59fV1dXTVRT9v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////B66np1cPX6+vr6+37+/v7++vr6+vW63/////9ra3p19WV09PDw8P
+T09XV1dXV1dNVVMH///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2ru+nVw5XZ1dWV1dfX2dfX1cODVVUm/b/////965dVk9PT08PDw8PV1dXT09XV05NU6X///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////aur6dfDg8PDg4OD08PDw8PDw8ODVRTCP////8I7qafV05HDw8PT1dXV09PT09PTk1UW/b/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////fvp18ODw8ODg4PT08PDw8PDw4NVVMI/////wjupadXTg4PDw9PV1dXV09PT09OTVRc9v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////B65eVg4ODw8PDw8PDw8PDw8PDgFMS/f///////eunp9OTk9PV1dXV1dXT09PT08NVFMI//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8HpaZWDg4PVw8ODg4OD1cPDw4OAQxTnP//////B+6dXlZXn6enn59XV09PT09PTw1VS/f/////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////alr1VODQ5XX1dXX6evr6dfV1cODFRT9v////8I7u+vr6evr6enp5+fn1dXT09PDU1UXP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+6uXVYODg5fX1+nt/bv77evX1dVXVMH//////8HB+/vr6enp6enp5+fn1dXV09ODVVT9v//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////9vemVlYODg0ODg1Wp6+3r14ODQEMS1z29vYICK3u9u+vp6enp6enp5+fn19XV04NVVP2////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////B66mVk4NDQ4ODg5Or/bvXg0NAQFLClNTU1xcW623r6+vp6enp6enn5+fn19XV02dU/b////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2B66eVlZODQ4ODg6f769WDg0NAQxMTFRUXa+vr2ZnZ6evp6enp5+fn19fX59WXl2c////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2B/emnVZWDQ0ODU5ODg4ODg0BAQEBAQEBDV5nr2dnX2enp6enp6efX19fV5+mUwf/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////B6Wlnl1VVU1NTQ1ODQ1OTU1NTU1NTU1NVl9nb29nZ2Zmp6enp59fVl+nplP3////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////9gf3paWlXV1dXV1dXV1dXV2dXV1dnl2mr6aut7e3r6+vr6+mpqampqWcB///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9v////YIB/eupaWlpaWlpaWlpaWlpaWlpaWlrq6urq6urq6urq6mrvf3B///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9vb29ggICAgICAgICPb2CAgICAgICAgICAgICAgICPb29v//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <CodeModules>
+    <CodeModule>SoftBrands.FourthShift.RDLShared, Version=7.50.4.68, Culture=neutral, PublicKeyToken=541b4aff0f04b60a</CodeModule>
+  </CodeModules>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>9d7f02b0-990c-4098-a34c-6419dbdb043c</rd:ReportID>
+</Report>

@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox17">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <rd:DefaultName>textbox17</rd:DefaultName>
+        <Height>0.63491cm</Height>
+        <Width>1.58729cm</Width>
+        <Top>3.30159cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>=Code.SetStartItem(Parameters!FromCommission.Value)</Value>
+        <Left>10.85714cm</Left>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <Height>0.63491cm</Height>
+        <Width>4.19047cm</Width>
+        <Top>3.30159cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Starting Commssion Code:</Value>
+        <Left>6.66667cm</Left>
+      </Textbox>
+      <Textbox Name="textbox16">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <rd:DefaultName>textbox16</rd:DefaultName>
+        <Height>0.5471cm</Height>
+        <Width>2.80423cm</Width>
+        <Top>1.52381cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Function: CMTI</Value>
+        <Left>0.05291cm</Left>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <TextAlign>Center</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>3.99167in</Width>
+        <Top>0.3in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>=ReportItems!CompanyName.Value</Value>
+        <Left>1.70416in</Left>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <Format>=ReportLib.Language.GetDateFormat(ReportItems!DateNumberFormat.Value, "/", "L")+" HH:mm:ss"</Format>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>1.66667in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>= Globals!ExecutionTime</Value>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>6.24339cm</Width>
+        <CanGrow>true</CanGrow>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+        <Left>4.875in</Left>
+      </Textbox>
+      <Textbox Name="txt16">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>12pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <Color>Navy</Color>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <Height>0.21542in</Height>
+        <Width>3.275in</Width>
+        <Top>0.6in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Commission Code Table</Value>
+        <Left>2.0625in</Left>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>4cm</Height>
+  </PageHeader>
+  <CodeModules>
+    <CodeModule>SoftBrands.FourthShift.RDLShared, Version=1.0.7400.0, Culture=neutral, PublicKeyToken=541b4aff0f04b60a</CodeModule>
+  </CodeModules>
+  <RightMargin>0.4in</RightMargin>
+  <Author>SoftBrands Manufacturing, Inc.</Author>
+  <Body>
+    <ReportItems>
+      <Table Name="ItemMaster">
+        <Height>1.02857cm</Height>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+          <BorderWidth>
+            <Top>3pt</Top>
+          </BorderWidth>
+          <BorderStyle>
+            <Top>None</Top>
+          </BorderStyle>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.225in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>900</FontWeight>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Com Code</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>900</FontWeight>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Description</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>900</FontWeight>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Com Rate</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>900</FontWeight>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Primary Sales Id</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.18in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ItemNumber">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <rd:DefaultName>ItemNumber</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!CommissionCode.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ItemDescription">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <rd:DefaultName>ItemDescription</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!CommissionCodeDescription.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="IsLotTraced">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <rd:DefaultName>IsLotTraced</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!CommissionRate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="IsSerialized">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <rd:DefaultName>IsSerialized</rd:DefaultName>
+                      <Value>= Fields!PrimarySalesperson.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CompanyName">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                      <CanGrow>true</CanGrow>
+                      <Value>= First(Fields!CompanyName.Value, "SystemConfig")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DateNumberFormat">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                      <CanGrow>true</CanGrow>
+                      <Value>= First(Fields!DateNumberFormat.Value, "SystemConfig")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <DataSetName>CMTI</DataSetName>
+        <Top>0.15in</Top>
+        <Width>14.85714cm</Width>
+        <Left>2.06349cm</Left>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.675in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.325in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.275in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.425in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.075in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.075in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style>
+      <BorderColor>
+        <Bottom>DarkBlue</Bottom>
+      </BorderColor>
+    </Style>
+    <Height>0.675in</Height>
+    <ColumnSpacing>0in</ColumnSpacing>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="FSDB">
+      <rd:DataSourceID>cb3dd503-37ad-4257-9757-7e7344de9429</rd:DataSourceID>
+      <DataSourceReference>FSDB</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code>Public shared function SetStartItem (ByVal value As string) As String
+	SetStartItem = value
+End Function</Code>
+  <Width>7.4in</Width>
+  <DataSets>
+    <DataSet Name="SystemConfig">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateNumberFormat">
+          <DataField>DateNumberFormat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbol">
+          <DataField>CurrencySymbol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbolPlacement">
+          <DataField>CurrencySymbolPlacement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select 	CompanyName
+	, DateNumberFormat
+	, CurrencySymbol
+	, s.DecimalPrecision
+	, CurrencySymbolPlacement
+from 	FS_SystemConfig s
+	,FS_CurrencyCode c
+where	c.CurrencyCode='00000'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="CMTI">
+      <Fields>
+        <Field Name="CommissionCode">
+          <DataField>CommissionCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CommissionCodeDescription">
+          <DataField>CommissionCodeDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CommissionRate">
+          <DataField>CommissionRate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PrimarySalesperson">
+          <DataField>PrimarySalesperson</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CommissionCodeRowVersion">
+          <DataField>CommissionCodeRowVersion</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="CommissionCodeKey">
+          <DataField>CommissionCodeKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>----------------------------------------------------------------------------------
+-- NAME:	CMTI
+-- COPYRIGHT: Copyright 2004, SoftBrands Corporation. All rights reserved.
+-- REVISION:  $Revision: $
+--
+-- FUNCTION:  Used in CMTI   Date query from FS_CommissionCode
+--
+--
+
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+select *
+from FS_CommissionCode (READUNCOMMITTED) 
+where CommissionCode&gt;=@FromCommission 
+and CommissionCode &lt;=@ToCommission</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@FromCommission">
+            <Value>=Parameters!FromCommission.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ToCommission">
+            <Value>=Parameters!ToCommission.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>0.4in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description>Commission Code Table Inquiry</Description>
+  <rd:ReportID>9d7f02b0-990c-4098-a34c-6419dbdb043c</rd:ReportID>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="RevisionLog">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Width>1.67708in</Width>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Top>0.17813in</Top>
+        <Value>="05/10/04 initial revision;
+03/27/09 SDR52364;"</Value>
+        <CanGrow>true</CanGrow>
+        <Left>1.75729in</Left>
+      </Textbox>
+      <Textbox Name="ReportName">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <Height>0.25in</Height>
+        <Width>1.67708in</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <Top>0.16875in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= "CusCmti.rdl 7.4.03"</Value>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.42812in</Height>
+  </PageFooter>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="FromCommission">
+      <DataType>String</DataType>
+      <Prompt>From Commission Code </Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ToCommission">
+      <DataType>String</DataType>
+      <Prompt>Thru Commission Code</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FSDBMR">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=FSSERV;Initial Catalog=FSDBMR</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>20c68520-34d1-42a4-a193-11d9b8c6d34b</DataSourceID>
+</RptDataSource>

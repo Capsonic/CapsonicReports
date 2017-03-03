@@ -1,0 +1,2401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="FSDBMR">
+      <rd:DataSourceID>1c194f04-4a6c-4f41-88fd-995077821566</rd:DataSourceID>
+      <DataSourceReference>FSDBMR</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Main">
+      <DataType>String</DataType>
+      <Prompt>Select your Filter option:</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>A</Value>
+            <Label>All</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>B</Value>
+            <Label>Buyer</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>VI</Value>
+            <Label>Vendor ID</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Select">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>?</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Type your Filter value:</Prompt>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="Group">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VI</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Group Criteria:</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>B</Value>
+            <Label>By Buyer</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>CI</Value>
+            <Label>By Capsonic's Item</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>VI</Value>
+            <Label>By Vendor's  ID</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.1in</RightMargin>
+  <LeftMargin>0.1in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>Fit</Sizing>
+        <Top>0.0125in</Top>
+        <Width>2.55in</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <ZIndex>3</ZIndex>
+        <Left>3.75in</Left>
+        <Height>0.45in</Height>
+        <Value>capsonic_logo</Value>
+      </Image>
+      <Textbox Name="textbox51">
+        <Top>0.475in</Top>
+        <Width>3.675in</Width>
+        <Style>
+          <Color>DarkBlue</Color>
+          <FontStyle>Italic</FontStyle>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.325in</Left>
+        <Value>=iif(Parameters!Group.Value="CI","VDIT -- Capsonic Item Number Cross Reference","VDIT -- Vendor Item Number Cross Reference")</Value>
+      </Textbox>
+      <Textbox Name="textbox44">
+        <Top>0.025in</Top>
+        <Width>1.125in</Width>
+        <Style>
+          <FontSize>7pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.625in</Left>
+        <Height>0.25in</Height>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Top>0.025in</Top>
+        <Width>1.15in</Width>
+        <Style>
+          <FontSize>6pt</FontSize>
+          <Format>d</Format>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>0.05in</Left>
+        <DataElementName>PrintDate</DataElementName>
+        <Height>0.225in</Height>
+        <Value>=Globals!ReportName &amp; 
+",  User ID: " &amp; User!UserID</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.675in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.1in</BottomMargin>
+  <rd:ReportID>c76f0436-72c4-4e29-a0b0-dce5989302f8</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="capsonic_logo">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="XReferenceVendor">
+      <Fields>
+        <Field Name="ItemNumber">
+          <DataField>ItemNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemDescription">
+          <DataField>ItemDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemReference1">
+          <DataField>ItemReference1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorID">
+          <DataField>VendorID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemNumber">
+          <DataField>VendorItemNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemDescription">
+          <DataField>VendorItemDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="YTDReceiptLocalAmount">
+          <DataField>YTDReceiptLocalAmount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="YTDPaymentLocalAmount">
+          <DataField>YTDPaymentLocalAmount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="YTDInvoiceLocalAmount">
+          <DataField>YTDInvoiceLocalAmount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemTotalDeliveries1">
+          <DataField>VendorItemTotalDeliveries1</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemEarlyDeliveries1">
+          <DataField>VendorItemEarlyDeliveries1</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemLateDeliveries1">
+          <DataField>VendorItemLateDeliveries1</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemReceiptQuantity1">
+          <DataField>VendorItemReceiptQuantity1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemPOLocalAmount1">
+          <DataField>VendorItemPOLocalAmount1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemRejectedQuantity1">
+          <DataField>VendorItemRejectedQuantity1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemReceiptLocalAmount1">
+          <DataField>VendorItemReceiptLocalAmount1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemLastReceiptDate">
+          <DataField>VendorItemLastReceiptDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="VendorItemPPVLocalAmount1">
+          <DataField>VendorItemPPVLocalAmount1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MakeBuyCode">
+          <DataField>MakeBuyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Buyer">
+          <DataField>Buyer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MainGroup">
+          <Value>=iif(Parameters!Group.Value="VI",Fields!VendorID.Value &amp; " - " &amp; Fields!VendorName.Value,iif(Parameters!Group.Value="CI", "Capsonic " &amp; Fields!ItemNumber.Value,Fields!Buyer.Value))</Value>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDBMR</DataSourceName>
+        <CommandText>IF @Main = 'A' 
+SELECT     FS_Item.ItemNumber, FS_Item.ItemDescription, FS_Item.ItemReference1, FS_VendorItem.VendorID, FS_VendorItem.VendorItemNumber, 
+                      FS_VendorItem.VendorItemDescription, FS_Vendor.VendorName, FS_VendorData.YTDReceiptLocalAmount, FS_VendorData.YTDPaymentLocalAmount, 
+                      FS_VendorData.YTDInvoiceLocalAmount, FS_VendorItemData.VendorItemTotalDeliveries1, FS_VendorItemData.VendorItemEarlyDeliveries1, 
+                      FS_VendorItemData.VendorItemLateDeliveries1, FS_VendorItemData.VendorItemReceiptQuantity1, FS_VendorItemData.VendorItemPOLocalAmount1, 
+                      FS_VendorItemData.VendorItemRejectedQuantity1, FS_VendorItemData.VendorItemReceiptLocalAmount1, FS_VendorItemData.VendorItemLastReceiptDate, 
+                      FS_VendorItemData.VendorItemPPVLocalAmount1, FS_Item.MakeBuyCode, FS_Item.Buyer
+FROM         FS_Vendor INNER JOIN
+                      FS_VendorItem ON FS_Vendor.VendorKey = FS_VendorItem.VendorKey INNER JOIN
+                      FS_VendorData ON FS_Vendor.VendorKey = FS_VendorData.VendorKey INNER JOIN
+                      FS_VendorItemData ON FS_VendorItem.VendorItemKey = FS_VendorItemData.VendorItemKey RIGHT OUTER JOIN
+                      FS_Item ON FS_VendorItem.ItemKey = FS_Item.ItemKey
+WHERE     (FS_Item.MakeBuyCode = 'B')
+
+
+ IF @Main = 'B'
+                                                        SELECT     FS_Item.ItemNumber, FS_Item.ItemDescription, FS_Item.ItemReference1, FS_VendorItem.VendorID, FS_VendorItem.VendorItemNumber, 
+                      FS_VendorItem.VendorItemDescription, FS_Vendor.VendorName, FS_VendorData.YTDReceiptLocalAmount, FS_VendorData.YTDPaymentLocalAmount, 
+                      FS_VendorData.YTDInvoiceLocalAmount, FS_VendorItemData.VendorItemTotalDeliveries1, FS_VendorItemData.VendorItemEarlyDeliveries1, 
+                      FS_VendorItemData.VendorItemLateDeliveries1, FS_VendorItemData.VendorItemReceiptQuantity1, FS_VendorItemData.VendorItemPOLocalAmount1, 
+                      FS_VendorItemData.VendorItemRejectedQuantity1, FS_VendorItemData.VendorItemReceiptLocalAmount1, FS_VendorItemData.VendorItemLastReceiptDate, 
+                      FS_VendorItemData.VendorItemPPVLocalAmount1, FS_Item.MakeBuyCode, FS_Item.Buyer
+
+FROM         FS_Vendor INNER JOIN
+                      FS_VendorItem ON FS_Vendor.VendorKey = FS_VendorItem.VendorKey INNER JOIN
+                      FS_VendorData ON FS_Vendor.VendorKey = FS_VendorData.VendorKey INNER JOIN
+                      FS_VendorItemData ON FS_VendorItem.VendorItemKey = FS_VendorItemData.VendorItemKey RIGHT OUTER JOIN
+                      FS_Item ON FS_VendorItem.ItemKey = FS_Item.ItemKey
+WHERE     (FS_Item.MakeBuyCode = 'B') and     (FS_Item.Buyer  IN (@Select))
+ IF @Main = 'VI'
+                                                                                     SELECT     FS_Item.ItemNumber, FS_Item.ItemDescription, FS_Item.ItemReference1, FS_VendorItem.VendorID, FS_VendorItem.VendorItemNumber, 
+                      FS_VendorItem.VendorItemDescription, FS_Vendor.VendorName, FS_VendorData.YTDReceiptLocalAmount, FS_VendorData.YTDPaymentLocalAmount, 
+                      FS_VendorData.YTDInvoiceLocalAmount, FS_VendorItemData.VendorItemTotalDeliveries1, FS_VendorItemData.VendorItemEarlyDeliveries1, 
+                      FS_VendorItemData.VendorItemLateDeliveries1, FS_VendorItemData.VendorItemReceiptQuantity1, FS_VendorItemData.VendorItemPOLocalAmount1, 
+                      FS_VendorItemData.VendorItemRejectedQuantity1, FS_VendorItemData.VendorItemReceiptLocalAmount1, FS_VendorItemData.VendorItemLastReceiptDate, 
+                      FS_VendorItemData.VendorItemPPVLocalAmount1, FS_Item.MakeBuyCode, FS_Item.Buyer
+FROM         FS_Vendor INNER JOIN
+                      FS_VendorItem ON FS_Vendor.VendorKey = FS_VendorItem.VendorKey INNER JOIN
+                      FS_VendorData ON FS_Vendor.VendorKey = FS_VendorData.VendorKey INNER JOIN
+                      FS_VendorItemData ON FS_VendorItem.VendorItemKey = FS_VendorItemData.VendorItemKey RIGHT OUTER JOIN
+                      FS_Item ON FS_VendorItem.ItemKey = FS_Item.ItemKey
+WHERE     (FS_Item.MakeBuyCode = 'B') and    (FS_VendorItem.VendorID  IN (@Select))</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Main">
+            <Value>=Parameters!Main.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Select">
+            <Value>=Parameters!Select.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>10.65in</Width>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>XReferenceVendor</DataSetName>
+        <Top>0.05in</Top>
+        <TableGroups>
+          <TableGroup>
+            <Grouping Name="table1_Group1">
+              <Label>=Fields!MainGroup.Value</Label>
+              <GroupExpressions>
+                <GroupExpression>=Fields!MainGroup.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+            <Sorting>
+              <SortBy>
+                <SortExpression>=Fields!MainGroup.Value</SortExpression>
+                <Direction>Ascending</Direction>
+              </SortBy>
+            </Sorting>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="MainGroup">
+                          <rd:DefaultName>MainGroup</rd:DefaultName>
+                          <Style>
+                            <Color>DarkBlue</Color>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>65</ZIndex>
+                          <Value>=(Fields!MainGroup.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox5">
+                          <rd:DefaultName>textbox5</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>64</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox60">
+                          <rd:DefaultName>textbox60</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>63</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox78">
+                          <rd:DefaultName>textbox78</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>62</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox85">
+                          <rd:DefaultName>textbox85</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>61</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="YTDReceiptLocalAmount">
+                          <rd:DefaultName>YTDReceiptLocalAmount</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Parameters!Group.Value="VI",False,True)</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>60</ZIndex>
+                          <Value>=iif(FIelds!YTDReceiptLocalAmount.Value=0,"",FIelds!YTDReceiptLocalAmount.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="YTDPaymentLocalAmount">
+                          <rd:DefaultName>YTDPaymentLocalAmount</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Parameters!Group.Value="VI",False,True)</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>59</ZIndex>
+                          <Value>=iif(Fields!YTDPaymentLocalAmount.Value = 0,"",Fields!YTDPaymentLocalAmount.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="YTDInvoiceLocalAmount">
+                          <rd:DefaultName>YTDInvoiceLocalAmount</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Parameters!Group.Value="VI",false,true)</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>58</ZIndex>
+                          <Value>=iif(Fields!YTDInvoiceLocalAmount.Value=0,"",Fields!YTDInvoiceLocalAmount.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox87">
+                          <rd:DefaultName>textbox87</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>None</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>57</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.2in</Height>
+                </TableRow>
+                <TableRow>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox23">
+                          <Style>
+                            <Color>DarkBlue</Color>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>56</ZIndex>
+                          <Value>=(Fields!MainGroup.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox67">
+                          <rd:DefaultName>textbox67</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>55</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox71">
+                          <rd:DefaultName>textbox71</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>54</ZIndex>
+                          <Value>dd</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox79">
+                          <rd:DefaultName>textbox79</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>53</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox86">
+                          <rd:DefaultName>textbox86</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>52</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox72">
+                          <rd:DefaultName>textbox72</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Parameters!Group.Value="VI",True,false)</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>51</ZIndex>
+                          <Value>=iif(Fields!YTDReceiptLocalAmount.Value=0,"",Fields!YTDReceiptLocalAmount.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox75">
+                          <rd:DefaultName>textbox75</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Parameters!Group.Value="VI",True,False)</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>50</ZIndex>
+                          <Value>=iif(Fields!YTDPaymentLocalAmount.Value=0,"",Fields!YTDPaymentLocalAmount.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox76">
+                          <rd:DefaultName>textbox76</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Parameters!Group.Value="VI",True,False)</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>49</ZIndex>
+                          <Value>=iif(Fields!YTDInvoiceLocalAmount.Value=0,"",Fields!YTDInvoiceLocalAmount.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox90">
+                          <rd:DefaultName>textbox90</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>None</Bottom>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>c2</Format>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>48</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.175in</Height>
+                </TableRow>
+              </TableRows>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </Header>
+            <Footer>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox14">
+                          <rd:DefaultName>textbox14</rd:DefaultName>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>31</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox48">
+                          <rd:DefaultName>textbox48</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>30</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox15">
+                          <rd:DefaultName>textbox15</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>29</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox45">
+                          <rd:DefaultName>textbox45</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>28</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox35">
+                          <rd:DefaultName>textbox35</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>27</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox30">
+                          <rd:DefaultName>textbox30</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>26</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox25">
+                          <rd:DefaultName>textbox25</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>25</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox20">
+                          <rd:DefaultName>textbox20</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>24</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox12">
+                          <rd:DefaultName>textbox12</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>23</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox62">
+                          <rd:DefaultName>textbox62</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>22</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox81">
+                          <rd:DefaultName>textbox81</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>21</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox88">
+                          <rd:DefaultName>textbox88</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>20</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox57">
+                          <rd:DefaultName>textbox57</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>19</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox73">
+                          <rd:DefaultName>textbox73</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>18</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox68">
+                          <rd:DefaultName>textbox68</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>17</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox92">
+                          <rd:DefaultName>textbox92</rd:DefaultName>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>16</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.175in</Height>
+                </TableRow>
+              </TableRows>
+            </Footer>
+          </TableGroup>
+        </TableGroups>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ItemNumber">
+                      <rd:DefaultName>ItemNumber</rd:DefaultName>
+                      <Style>
+                        <Color>=iif(Fields!ItemNumber.Value&lt;&gt;Fields!VendorItemNumber.Value,"Red","Black")</Color>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <Value>=Fields!ItemNumber.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ItemDescription">
+                      <rd:DefaultName>ItemDescription</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <Value>=Fields!ItemDescription.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemNumber">
+                      <rd:DefaultName>VendorItemNumber</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <Value>=(Fields!VendorItemNumber.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemDescription">
+                      <rd:DefaultName>VendorItemDescription</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <Value>=Fields!VendorItemDescription.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemTotalDeliveries1">
+                      <rd:DefaultName>VendorItemTotalDeliveries1</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N0</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <Value>=iif(Fields!VendorItemTotalDeliveries1.Value=0,"",Fields!VendorItemTotalDeliveries1.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemEarlyDeliveries1">
+                      <rd:DefaultName>VendorItemEarlyDeliveries1</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N0</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <Value>=iif(Fields!VendorItemEarlyDeliveries1.Value=0,"",Fields!VendorItemEarlyDeliveries1.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemLateDeliveries1">
+                      <rd:DefaultName>VendorItemLateDeliveries1</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N0</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <Value>=iif(Fields!VendorItemLateDeliveries1.Value=0,"",Fields!VendorItemLateDeliveries1.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemReceiptQuantity1">
+                      <rd:DefaultName>VendorItemReceiptQuantity1</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N0</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <Value>=iif(Fields!VendorItemReceiptQuantity1.Value = 0,"",Fields!VendorItemReceiptQuantity1.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemPOLocalAmount1">
+                      <rd:DefaultName>VendorItemPOLocalAmount1</rd:DefaultName>
+                      <Style>
+                        <Color>=iif(Fields!VendorItemPOLocalAmount1.Value&lt;0,"Red","Black")</Color>
+                        <FontSize>8pt</FontSize>
+                        <Format>c2</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <Value>=iif(Fields!VendorItemPOLocalAmount1.Value = 0,"",Fields!VendorItemPOLocalAmount1.Value )</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemReceiptLocalAmount1">
+                      <rd:DefaultName>VendorItemReceiptLocalAmount1</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>c2</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <Value>=iif(Fields!VendorItemReceiptLocalAmount1.Value = 0,"",Fields!VendorItemReceiptLocalAmount1.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorID">
+                      <rd:DefaultName>VendorID</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>None</Top>
+                          <Bottom>None</Bottom>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <Value>=Fields!VendorID.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VendorItemPPVLocalAmount1">
+                      <rd:DefaultName>VendorItemPPVLocalAmount1</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <Value>=Fields!VendorItemPPVLocalAmount1.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox80">
+                      <rd:DefaultName>textbox80</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox56">
+                      <rd:DefaultName>textbox56</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox64">
+                      <rd:DefaultName>textbox64</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Buyer_1">
+                      <rd:DefaultName>Buyer_1</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <Value>=Fields!Buyer.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.175in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>95</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox24">
+                      <rd:DefaultName>textbox24</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>94</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox29">
+                      <rd:DefaultName>textbox29</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>93</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox34">
+                      <rd:DefaultName>textbox34</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>92</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox38">
+                      <rd:DefaultName>textbox38</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>91</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox39">
+                      <rd:DefaultName>textbox39</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>90</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox40">
+                      <rd:DefaultName>textbox40</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>89</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox41">
+                      <rd:DefaultName>textbox41</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>88</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox47">
+                      <rd:DefaultName>textbox47</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>87</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox52">
+                      <rd:DefaultName>textbox52</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>86</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox55">
+                      <rd:DefaultName>textbox55</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>85</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <rd:DefaultName>textbox18</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>84</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox50">
+                      <rd:DefaultName>textbox50</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>83</ZIndex>
+                      <Value>Year To Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox28">
+                      <rd:DefaultName>textbox28</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>82</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.2in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Calendar>Gregorian</Calendar>
+                      </Style>
+                      <ZIndex>81</ZIndex>
+                      <UserSort>
+                        <SortExpression>=Fields!ItemNumber.Value</SortExpression>
+                      </UserSort>
+                      <Value>Item</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox42">
+                      <rd:DefaultName>textbox42</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Calendar>Gregorian</Calendar>
+                      </Style>
+                      <ZIndex>80</ZIndex>
+                      <Value>Item Descr</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Calendar>Gregorian</Calendar>
+                      </Style>
+                      <ZIndex>79</ZIndex>
+                      <UserSort>
+                        <SortExpression>=Fields!VendorItemNumber.Value</SortExpression>
+                      </UserSort>
+                      <Value>Vendor Item</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox37">
+                      <rd:DefaultName>textbox37</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Calendar>Gregorian</Calendar>
+                      </Style>
+                      <ZIndex>78</ZIndex>
+                      <Value>Vendor Item Desc</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox32">
+                      <rd:DefaultName>textbox32</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>77</ZIndex>
+                      <Value>Total Delivery</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox27">
+                      <rd:DefaultName>textbox27</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Calendar>Gregorian</Calendar>
+                      </Style>
+                      <ZIndex>76</ZIndex>
+                      <Value>Early Delivery</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Calendar>Gregorian</Calendar>
+                      </Style>
+                      <ZIndex>75</ZIndex>
+                      <Value>Late Delivery</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox17">
+                      <rd:DefaultName>textbox17</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Calendar>Gregorian</Calendar>
+                      </Style>
+                      <ZIndex>74</ZIndex>
+                      <Value>Receipt Qty</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Calendar>Gregorian</Calendar>
+                      </Style>
+                      <ZIndex>73</ZIndex>
+                      <Value>PO Amount</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox59">
+                      <rd:DefaultName>textbox59</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>72</ZIndex>
+                      <Value>Vendor Item Receipt</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox54">
+                      <rd:DefaultName>textbox54</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>71</ZIndex>
+                      <Value>Vendor ID</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox84">
+                      <rd:DefaultName>textbox84</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>70</ZIndex>
+                      <Value>PPV</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox77">
+                      <rd:DefaultName>textbox77</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>69</ZIndex>
+                      <Value>Receipt</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox70">
+                      <rd:DefaultName>textbox70</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>68</ZIndex>
+                      <Value> Payment</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox61">
+                      <rd:DefaultName>textbox61</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>67</ZIndex>
+                      <Value>Invoice</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox33">
+                      <rd:DefaultName>textbox33</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>1.5pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>66</ZIndex>
+                      <Value>Buyer</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.35in</Height>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+          <FixedHeader>true</FixedHeader>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.7in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.675in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.675in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.6in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.55in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.55in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.65in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.65in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.975in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.725in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.675in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.675in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.675in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.675in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.325in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>47</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox49">
+                      <rd:DefaultName>textbox49</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>46</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>45</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox46">
+                      <rd:DefaultName>textbox46</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>44</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox36">
+                      <rd:DefaultName>textbox36</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>43</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox31">
+                      <rd:DefaultName>textbox31</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>42</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>41</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>40</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>39</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox63">
+                      <rd:DefaultName>textbox63</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>38</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox82">
+                      <rd:DefaultName>textbox82</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>37</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox89">
+                      <rd:DefaultName>textbox89</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>36</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox58">
+                      <rd:DefaultName>textbox58</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>35</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox74">
+                      <rd:DefaultName>textbox74</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>34</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox69">
+                      <rd:DefaultName>textbox69</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>33</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox93">
+                      <rd:DefaultName>textbox93</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>32</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+      </Table>
+    </ReportItems>
+    <Height>1.575in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Line Name="line1">
+        <Width>9.775in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="textbox53">
+        <rd:DefaultName>textbox53</rd:DefaultName>
+        <Width>4.175in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.2in</Height>
+        <Value>If Capsonic's Item &lt;&gt; Vendor's Item, Capsonic's Item will be in Red</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>2.4in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.15in</TopMargin>
+  <PageHeight>8.5in</PageHeight>
+</Report>

@@ -1,0 +1,3535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox15">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <Format>=ReportLib.Language.GetDateFormat(ReportItems!DateNumberFormat.Value, "/", "L")+" HH:mm:ss"</Format>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>1.66667in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>= Globals!ExecutionTime</Value>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>2.45833in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+        <Left>4.9in</Left>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.3in</Height>
+  </PageHeader>
+  <CodeModules>
+    <CodeModule>SoftBrands.FourthShift.RDLShared, Version=1.0.7400.0, Culture=neutral, PublicKeyToken=541b4aff0f04b60a</CodeModule>
+  </CodeModules>
+  <RightMargin>0.4in</RightMargin>
+  <Author>SoftBrands Manufacturing, Inc.</Author>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Style />
+        <Grouping Name="list1_BIN">
+          <GroupExpressions>
+            <GroupExpression>=Fields!RecurringInvoiceReferenceNumber.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+        <DataSetName>IVRE</DataSetName>
+        <Width>7.39375in</Width>
+        <ReportItems>
+          <Textbox Name="textbox32">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=Iif( Fields!TermsCode.Value = "D","0.00",Nothing)</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>102</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.33332cm</Width>
+            <Top>8.44443cm</Top>
+            <Value>= iif( Fields!TermsCode.Value ="D", Fields!TermsDiscountPercent3.Value ," ")</Value>
+            <Left>1.86773cm</Left>
+          </Textbox>
+          <Textbox Name="textbox33">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>101</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.77778cm</Width>
+            <Top>8.44443cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M"," ",iif( Fields!TermsCode.Value ="D","Cash #3:",""))</Value>
+          </Textbox>
+          <Textbox Name="textbox35">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>100</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.77778cm</Width>
+            <Top>9.01586cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M"," ",iif( Fields!TermsCode.Value ="D","Cash #4:",""))</Value>
+          </Textbox>
+          <Textbox Name="textbox48">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>99</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.77778cm</Width>
+            <Top>7.30159cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M","Day:",iif( Fields!TermsCode.Value ="D","Cash #1:",""))</Value>
+          </Textbox>
+          <Textbox Name="textbox50">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>98</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.77778cm</Width>
+            <Top>7.87302cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M","",iif( Fields!TermsCode.Value ="D","Cash #2:",""))</Value>
+          </Textbox>
+          <Textbox Name="textbox31">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=Iif( Fields!TermsCode.Value = "D","0.00",Nothing)</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>97</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.33332cm</Width>
+            <Top>9.01586cm</Top>
+            <Value>= iif( Fields!TermsCode.Value ="D", Fields!TermsDiscountPercent4.Value , " ")</Value>
+            <Left>1.86773cm</Left>
+          </Textbox>
+          <Textbox Name="textbox62">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>96</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.26984cm</Width>
+            <Top>7.30159cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M", Fields!TermsMonthlyCutOffDay.Value ,iif( Fields!TermsCode.Value ="D", Fields!TermsDiscountDays1.Value ," "))</Value>
+            <Left>4.82538cm</Left>
+          </Textbox>
+          <Textbox Name="textbox65">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>95</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.26984cm</Width>
+            <Top>7.87302cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D", Fields!TermsDiscountDays2.Value ," ")</Value>
+            <Left>4.82538cm</Left>
+          </Textbox>
+          <Textbox Name="textbox58">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>94</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.77778cm</Width>
+            <Top>9.5873cm</Top>
+            <Value>= iif(TRIM(Fields!TermsCode.Value) = "D","Net:"," ")</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>93</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.39681cm</Width>
+            <Top>7.87302cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D","%","")</Value>
+            <Left>3.30159cm</Left>
+          </Textbox>
+          <Textbox Name="textbox7">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>92</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.39681cm</Width>
+            <Top>8.44443cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D","%"," ")</Value>
+            <Left>3.30159cm</Left>
+          </Textbox>
+          <Textbox Name="textbox8">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>91</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.39681cm</Width>
+            <Top>9.01586cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D","%"," ")</Value>
+            <Left>3.30159cm</Left>
+          </Textbox>
+          <Textbox Name="textbox10">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>90</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.46029cm</Width>
+            <Top>7.87302cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D","Days"," ")</Value>
+            <Left>6.2222cm</Left>
+          </Textbox>
+          <Textbox Name="textbox11">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>89</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.46029cm</Width>
+            <Top>8.44443cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D","Days"," ")</Value>
+            <Left>6.2222cm</Left>
+          </Textbox>
+          <Textbox Name="textbox19">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>88</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.46029cm</Width>
+            <Top>9.01586cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D","Days"," ")</Value>
+            <Left>6.2222cm</Left>
+          </Textbox>
+          <Textbox Name="textbox91">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>87</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.52378cm</Width>
+            <Top>7.30159cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M",TRIM( Fields!TermsMonthlyDelay.Value ), " ")</Value>
+            <Left>7.74603cm</Left>
+          </Textbox>
+          <Textbox Name="textbox92">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>86</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.52378cm</Width>
+            <Top>7.87302cm</Top>
+            <Value />
+            <Left>7.74603cm</Left>
+          </Textbox>
+          <Textbox Name="textbox94">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>85</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.52378cm</Width>
+            <Top>9.01586cm</Top>
+            <Value />
+            <Left>7.74603cm</Left>
+          </Textbox>
+          <Textbox Name="textbox95">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>84</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.52378cm</Width>
+            <Top>8.44443cm</Top>
+            <Value />
+            <Left>7.74603cm</Left>
+          </Textbox>
+          <Textbox Name="textbox96">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>83</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.46029cm</Width>
+            <Top>9.5873cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D","Days"," ")</Value>
+            <Left>6.22219cm</Left>
+          </Textbox>
+          <Textbox Name="textbox97">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>82</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.26983cm</Width>
+            <Top>9.5873cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D", Fields!TermsDiscountNetDays.Value ," ")</Value>
+            <Left>4.8254cm</Left>
+          </Textbox>
+          <Textbox Name="textbox44">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=Iif( Fields!TermsCode.Value = "D","0.00",Nothing)</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>81</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.33333cm</Width>
+            <Top>7.30159cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M", Fields!TermsMonthlyPaymentDay.Value ,iif( Fields!TermsCode.Value ="D", Fields!TermsDiscountPercent1.Value ,""))</Value>
+            <Left>1.86773cm</Left>
+          </Textbox>
+          <Textbox Name="textbox47">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=Iif( Fields!TermsCode.Value = "D","0.00",Nothing)</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>80</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.33333cm</Width>
+            <Top>7.87302cm</Top>
+            <Value>= iif( Fields!TermsCode.Value ="D", Fields!TermsDiscountPercent2.Value , " ")</Value>
+            <Left>1.86773cm</Left>
+          </Textbox>
+          <Textbox Name="textbox39">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>79</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.39681cm</Width>
+            <Top>7.30159cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M","Cutoff:" ,iif( Fields!TermsCode.Value ="D","%" ," "))</Value>
+            <Left>3.30159cm</Left>
+          </Textbox>
+          <Textbox Name="textbox40">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>78</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.26983cm</Width>
+            <Top>9.01586cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D", Fields!TermsDiscountDays4.Value ," ")</Value>
+            <Left>4.8254cm</Left>
+          </Textbox>
+          <Textbox Name="textbox42">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>77</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.26983cm</Width>
+            <Top>8.44443cm</Top>
+            <Value>= iif( Fields!TermsCode.Value = "D", Fields!TermsDiscountDays3.Value ," ")</Value>
+            <Left>4.8254cm</Left>
+          </Textbox>
+          <Textbox Name="textbox6">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>76</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.46029cm</Width>
+            <Top>7.30159cm</Top>
+            <Value>= iif(Fields!TermsCode.Value = "M","Delay:" ,iif( Fields!TermsCode.Value ="D","Days" ," "))</Value>
+            <Left>6.22222cm</Left>
+          </Textbox>
+          <Textbox Name="textbox12">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>75</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.709cm</Width>
+            <Top>9.01586cm</Top>
+            <Value>A/R Master Acct No</Value>
+            <Left>9.33333cm</Left>
+          </Textbox>
+          <Textbox Name="textbox17">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>74</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.709cm</Width>
+            <Top>9.5873cm</Top>
+            <Value>= Fields!AccountsReceivableAccount.Value</Value>
+            <Left>9.33333cm</Left>
+          </Textbox>
+          <Textbox Name="textbox125">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>73</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.76191cm</Width>
+            <Top>6.73016cm</Top>
+            <Value>= Fields!TermsCode.Value</Value>
+            <Left>5.14286cm</Left>
+          </Textbox>
+          <Textbox Name="textbox126">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>72</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.79367cm</Width>
+            <Top>6.73016cm</Top>
+            <Value>Invoice Terms:</Value>
+            <Left>2.22222cm</Left>
+          </Textbox>
+          <Textbox Name="textbox27">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>71</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.77778cm</Width>
+            <Top>6.73016cm</Top>
+            <Value>-------------</Value>
+            <Left>0.40742cm</Left>
+          </Textbox>
+          <Textbox Name="textbox41">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>70</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.77778cm</Width>
+            <Top>6.73016cm</Top>
+            <Value>-------------</Value>
+            <Left>6.03175cm</Left>
+          </Textbox>
+          <Table Name="table1">
+            <ZIndex>69</ZIndex>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <Height>0.2in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox68">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>39</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Ref</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox55">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>38</ZIndex>
+                          <rd:DefaultName>textbox55</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox60">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>37</ZIndex>
+                          <rd:DefaultName>textbox60</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Master Account No</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox61">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>36</ZIndex>
+                          <rd:DefaultName>textbox61</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Shipped</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>35</ZIndex>
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Unit</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>4</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox23">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>34</ZIndex>
+                          <rd:DefaultName>textbox23</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Exempt?</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox24">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>33</ZIndex>
+                          <rd:DefaultName>textbox24</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Com</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox102">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>32</ZIndex>
+                          <rd:DefaultName>textbox102</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+                <TableRow>
+                  <Height>0.2in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox9">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>31</ZIndex>
+                          <rd:DefaultName>textbox9</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Ln#</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox51">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>30</ZIndex>
+                          <rd:DefaultName>textbox51</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Item/Desc</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox18">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>29</ZIndex>
+                          <rd:DefaultName>textbox18</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>= First(Fields!AccountMask.Value, "GLAccountMask")</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox46">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>28</ZIndex>
+                          <rd:DefaultName>textbox46</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Quantity</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox4">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>27</ZIndex>
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Price</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox54">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>26</ZIndex>
+                          <rd:DefaultName>textbox54</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Iif(( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect") ="1")or( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect") ="2"),"","F")</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox43">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>25</ZIndex>
+                          <rd:DefaultName>textbox43</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Iif( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect") = "1" ,"",Iif( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect") = "2","L1","S"))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox69">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>24</ZIndex>
+                          <rd:DefaultName>textbox69</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Iif( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect") = "1" ,"",Iif( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect") = "2","L2","C"))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox88">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>23</ZIndex>
+                          <rd:DefaultName>textbox88</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Iif(( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect") ="1")or( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect") ="2"),"","M")</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox53">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>22</ZIndex>
+                          <rd:DefaultName>textbox53</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Code</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox104">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderWidth>
+                              <Bottom>1.5pt</Bottom>
+                            </BorderWidth>
+                            <BorderColor>
+                              <Default>Navy</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <FontSize>9pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>21</ZIndex>
+                          <rd:DefaultName>textbox104</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Height>0.18in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox16">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>10</ZIndex>
+                          <rd:DefaultName>textbox16</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>= Fields!RecurringInvoiceLineNumber.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox29">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>9</ZIndex>
+                          <rd:DefaultName>textbox29</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>= Fields!RecurringLineItemNumber.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox20">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <Format>=ReportLib.Language.GetDateFormat( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Format>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>8</ZIndex>
+                          <rd:DefaultName>textbox20</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>= Fields!RecurringInvoiceLineSalesAccount.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox49">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>7</ZIndex>
+                          <rd:DefaultName>textbox49</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>= Fields!RecurringInvoiceShipQuantity.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox5">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <Format>=ReportLib.Language.GetCostFormat(  Fields!RecurringInvoiceControllingUnitPrice.Value
+, Iif( Fields!RecurringInvoiceControllingCurrency.Value = "L",First(Fields!DecimalPrecision.Value, "SystemConfig") , Fields!CustDecimalPrecision.Value ) )</Format>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>6</ZIndex>
+                          <rd:DefaultName>textbox5</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>= Fields!RecurringInvoiceControllingUnitPrice.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox59">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>5</ZIndex>
+                          <rd:DefaultName>textbox59</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Iif( First(Fields!DatabaseType.Value, "CHOOSEDB") ="V","",Fields!IsFederalPrimaryTaxExempt.Value
+)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox52">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>4</ZIndex>
+                          <rd:DefaultName>textbox52</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Iif( First(Fields!DatabaseType.Value, "CHOOSEDB") ="V",Fields!IsFederalPrimaryTaxExempt.Value,Fields!IsStateSecondaryTaxExempt.Value
+)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox86">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <rd:DefaultName>textbox86</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Iif( First(Fields!DatabaseType.Value, "CHOOSEDB") ="V",Iif( First(Fields!TaxAuthority.Value, "TaxAuthoritySelect")  = "2",Fields!IsStateSecondaryTaxExempt.Value,""),Fields!IsCountyTaxExempt.Value
+)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox89">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <rd:DefaultName>textbox89</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Iif( First(Fields!DatabaseType.Value, "CHOOSEDB") ="V","",Fields!IsMunicipalTaxExempt.Value
+)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox87">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>=Iif(RowNumber("table1") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <rd:DefaultName>textbox87</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>= Fields!RecurringInvoiceCommissionCode.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="DateNumberFormat">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderStyle>
+                              <Top>None</Top>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                          </Visibility>
+                          <CanGrow>true</CanGrow>
+                          <Value>= First(Fields!DateNumberFormat.Value, "SystemConfig")</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <DataSetName>IVRE</DataSetName>
+            <Top>10.66667cm</Top>
+            <Footer>
+              <TableRows>
+                <TableRow>
+                  <Height>0.2in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>2</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox139">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>20</ZIndex>
+                          <rd:DefaultName>textbox139</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>="PRINTED IN:"+ Fields!CustCurrencyCodeDescription.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox141">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>19</ZIndex>
+                          <rd:DefaultName>textbox141</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox142">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>18</ZIndex>
+                          <rd:DefaultName>textbox142</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox143">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>17</ZIndex>
+                          <rd:DefaultName>textbox143</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox144">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>16</ZIndex>
+                          <rd:DefaultName>textbox144</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox145">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>15</ZIndex>
+                          <rd:DefaultName>textbox145</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox146">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>14</ZIndex>
+                          <rd:DefaultName>textbox146</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox147">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>13</ZIndex>
+                          <rd:DefaultName>textbox147</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox148">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>12</ZIndex>
+                          <rd:DefaultName>textbox148</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox107">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>11</ZIndex>
+                          <rd:DefaultName>textbox107</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Visibility>
+                    <Hidden>=Iif( Fields!CustomerControllingCode.Value  = "L",true,false)</Hidden>
+                  </Visibility>
+                </TableRow>
+              </TableRows>
+            </Footer>
+            <Left>0.03175cm</Left>
+            <TableColumns>
+              <TableColumn>
+                <Width>1.26984cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>4.06349cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>3.1746cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>3.04762cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>2.85714cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.69841cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.63492cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.63492cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.63492cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.65079cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.07937cm</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+          <Textbox Name="textbox1">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Center</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>68</ZIndex>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Height>0.225in</Height>
+            <Width>4.06443in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CompanyName.Value, "SystemConfig")</Value>
+            <Left>1.63028in</Left>
+          </Textbox>
+          <Textbox Name="txt16">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>12pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <Color>Navy</Color>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>67</ZIndex>
+            <Height>0.3in</Height>
+            <Width>3.68643in</Width>
+            <Top>0.3in</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Accounts Receivable Recurring Invoice</Value>
+            <Left>1.84429in</Left>
+          </Textbox>
+          <Textbox Name="textbox14">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>66</ZIndex>
+            <rd:DefaultName>textbox14</rd:DefaultName>
+            <Height>0.80581cm</Height>
+            <Width>2.53968cm</Width>
+            <Top>0.7619cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Function: IVRE</Value>
+            <Left>0.02646cm</Left>
+          </Textbox>
+          <Textbox Name="textbox34">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>65</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>4.69841cm</Width>
+            <Top>3.30157cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!BillToName.Value</Value>
+            <Left>1.33333cm</Left>
+          </Textbox>
+          <Textbox Name="textbox36">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>64</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.24338cm</Width>
+            <Top>3.30157cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Bill To:</Value>
+            <Left>0.02646cm</Left>
+          </Textbox>
+          <Textbox Name="textbox37">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>63</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>4.69841cm</Width>
+            <Top>3.87302cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!BillToAddress1.Value</Value>
+            <Left>1.33333cm</Left>
+          </Textbox>
+          <Textbox Name="textbox38">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>62</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.24338cm</Width>
+            <Top>3.87302cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Addr:</Value>
+            <Left>0.02646cm</Left>
+          </Textbox>
+          <Textbox Name="textbox71">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=ReportLib.Language.GetDateFormat( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>61</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.53968cm</Width>
+            <Top>1.65079cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!RecurringInvoiceLastMaintainedDate.Value</Value>
+            <Left>16.12699cm</Left>
+          </Textbox>
+          <Textbox Name="textbox72">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>60</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.52382cm</Width>
+            <Top>1.65079cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Rev Date:</Value>
+            <Left>14.53968cm</Left>
+          </Textbox>
+          <Textbox Name="textbox77">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>59</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>7.80952cm</Width>
+            <Top>3.87302cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!ShipToDeliveryLocationAddress1.Value</Value>
+            <Left>10.28571cm</Left>
+          </Textbox>
+          <Textbox Name="textbox78">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>58</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.65079cm</Width>
+            <Top>3.87302cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Addr:</Value>
+            <Left>8.38095cm</Left>
+          </Textbox>
+          <Textbox Name="textbox79">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>57</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>7.93651cm</Width>
+            <Top>3.30159cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!ShipToDeliveryLocationName.Value</Value>
+            <Left>10.28571cm</Left>
+          </Textbox>
+          <Textbox Name="textbox80">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>56</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.65079cm</Width>
+            <Top>3.30158cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Ship To:</Value>
+            <Left>8.38095cm</Left>
+          </Textbox>
+          <Textbox Name="textbox81">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>55</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.79365cm</Width>
+            <Top>5.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!BillToCity.Value</Value>
+            <Left>1.33334cm</Left>
+          </Textbox>
+          <Textbox Name="textbox82">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>54</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.10582cm</Width>
+            <Top>5.01587cm</Top>
+            <Value>City:</Value>
+            <CanGrow>true</CanGrow>
+            <Left>0.16402cm</Left>
+          </Textbox>
+          <Textbox Name="textbox83">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>53</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.76719cm</Width>
+            <Top>5.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!BillToState.Value</Value>
+            <Left>5.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox84">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>52</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.63492cm</Width>
+            <Top>5.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>St:</Value>
+            <Left>4.25397cm</Left>
+          </Textbox>
+          <Textbox Name="textbox85">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>51</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.28571cm</Width>
+            <Top>5.5873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!BillToZip.Value</Value>
+            <Left>1.33334cm</Left>
+          </Textbox>
+          <Textbox Name="textbox93">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>50</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.10582cm</Width>
+            <Top>5.5873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Zip:</Value>
+            <Left>0.16402cm</Left>
+          </Textbox>
+          <Textbox Name="textbox109">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>49</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.42857cm</Width>
+            <Top>5.5873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!BillToCountry.Value</Value>
+            <Left>5.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox110">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>48</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.63492cm</Width>
+            <Top>5.5873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>C:</Value>
+            <Left>4.25397cm</Left>
+          </Textbox>
+          <Textbox Name="textbox111">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>47</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>6.15873cm</Width>
+            <Top>6.15873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!FOBPoint.Value</Value>
+            <Left>1.96825cm</Left>
+          </Textbox>
+          <Textbox Name="textbox112">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>46</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.65079cm</Width>
+            <Top>6.15873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Fob Point:</Value>
+            <Left>0.19048cm</Left>
+          </Textbox>
+          <Textbox Name="textbox115">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>45</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>5.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!ShipToDeliveryLocationCity.Value</Value>
+            <Left>10.28571cm</Left>
+          </Textbox>
+          <Textbox Name="textbox116">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>44</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.01587cm</Width>
+            <Top>5.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>City:</Value>
+            <Left>8.95238cm</Left>
+          </Textbox>
+          <Textbox Name="textbox113">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>43</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.30159cm</Width>
+            <Top>5.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!ShipToDeliveryLocationState.Value</Value>
+            <Left>14.79365cm</Left>
+          </Textbox>
+          <Textbox Name="textbox114">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>42</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.73545cm</Width>
+            <Top>5.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>St:</Value>
+            <Left>13.71429cm</Left>
+          </Textbox>
+          <Textbox Name="textbox117">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>41</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.11111cm</Width>
+            <Top>5.5873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!ShipToDeliveryLocationZip.Value</Value>
+            <Left>10.28571cm</Left>
+          </Textbox>
+          <Textbox Name="textbox118">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>40</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.01587cm</Width>
+            <Top>5.5873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Zip:</Value>
+            <Left>8.95238cm</Left>
+          </Textbox>
+          <Textbox Name="textbox119">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>39</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.53968cm</Width>
+            <Top>5.5873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!ShipToDeliveryLocationCountry.Value</Value>
+            <Left>14.79365cm</Left>
+          </Textbox>
+          <Textbox Name="textbox120">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>38</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.67196cm</Width>
+            <Top>5.5873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>C:</Value>
+            <Left>13.77778cm</Left>
+          </Textbox>
+          <Textbox Name="textbox121">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>37</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>5.14286cm</Width>
+            <Top>6.15873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!CarrierName.Value</Value>
+            <Left>10.28571cm</Left>
+          </Textbox>
+          <Textbox Name="textbox122">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>36</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.01587cm</Width>
+            <Top>6.15873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Via:</Value>
+            <Left>8.95238cm</Left>
+          </Textbox>
+          <Textbox Name="textbox123">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=Iif( Fields!CustomerControllingCode.Value ="L",ReportLib.Language.GetNumberFormat( First(Fields!DecimalPrecision.Value, "SystemConfig") , First(Fields!CurrencySymbol.Value, "SystemConfig") , First(Fields!CurrencySymbolPlacement.Value, "SystemConfig") ),ReportLib.Language.GetNumberFormat( First(Fields!CustDecimalPrecision.Value, "IVRE") , First(Fields!CustCurrencySymbol.Value, "IVRE") , First(Fields!CustCurrencySymbolPlacement.Value, "IVRE") ))</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>35</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.37568cm</Width>
+            <Top>6.73016cm</Top>
+            <Value>= Fields!TotalLinesControllingAmount.Value</Value>
+            <Left>16.31745cm</Left>
+          </Textbox>
+          <Textbox Name="textbox124">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>34</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>6.73016cm</Top>
+            <Value>Extd Price:</Value>
+            <Left>13.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox99">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=Iif( Fields!CustomerControllingCode.Value ="L",ReportLib.Language.GetNumberFormat( First(Fields!DecimalPrecision.Value, "SystemConfig") , First(Fields!CurrencySymbol.Value, "SystemConfig") , First(Fields!CurrencySymbolPlacement.Value, "SystemConfig") ),ReportLib.Language.GetNumberFormat( First(Fields!CustDecimalPrecision.Value, "IVRE") , First(Fields!CustCurrencySymbol.Value, "IVRE") , First(Fields!CustCurrencySymbolPlacement.Value, "IVRE") ))</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>33</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.37568cm</Width>
+            <Top>7.30159cm</Top>
+            <Value>= Fields!TotalTaxControllingAmount.Value</Value>
+            <Left>16.31745cm</Left>
+          </Textbox>
+          <Textbox Name="textbox100">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>32</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>7.30159cm</Top>
+            <Value>=iif(  First(Fields!DatabaseType.Value, "CHOOSEDB")  = "V","Vat:","Sales Tax:")</Value>
+            <Left>13.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox103">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=Iif( Fields!CustomerControllingCode.Value ="L",ReportLib.Language.GetNumberFormat( First(Fields!DecimalPrecision.Value, "SystemConfig") , First(Fields!CurrencySymbol.Value, "SystemConfig") , First(Fields!CurrencySymbolPlacement.Value, "SystemConfig") ),ReportLib.Language.GetNumberFormat( First(Fields!CustDecimalPrecision.Value, "IVRE") , First(Fields!CustCurrencySymbol.Value, "IVRE") , First(Fields!CustCurrencySymbolPlacement.Value, "IVRE") ))</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>31</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.37568cm</Width>
+            <Top>7.87302cm</Top>
+            <Value>= Fields!TotalRecurringInvoiceControllingAmount.Value</Value>
+            <Left>16.31745cm</Left>
+          </Textbox>
+          <Textbox Name="textbox106">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>30</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>7.87302cm</Top>
+            <Value>Invoice Total:</Value>
+            <Left>13.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox127">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>29</ZIndex>
+            <Height>0.2in</Height>
+            <Width>2.15873cm</Width>
+            <Top>9.01586cm</Top>
+            <Value>= Fields!CommissionCode.Value</Value>
+            <Left>16.44445cm</Left>
+          </Textbox>
+          <Textbox Name="textbox130">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>28</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>9.01586cm</Top>
+            <Value>Com Code:</Value>
+            <Left>13.14287cm</Left>
+          </Textbox>
+          <Textbox Name="textbox132">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>27</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.82539cm</Width>
+            <Visibility>
+              <Hidden>=Iif( First(Fields!DatabaseType.Value, "CHOOSEDB") ="V",false,true)</Hidden>
+            </Visibility>
+            <Top>6.15873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Vcc:</Value>
+            <Left>15.68254cm</Left>
+          </Textbox>
+          <Textbox Name="textbox133">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>26</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.03176cm</Width>
+            <Visibility>
+              <Hidden>=Iif( First(Fields!DatabaseType.Value, "CHOOSEDB") ="V",false,true)</Hidden>
+            </Visibility>
+            <Top>6.15873cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!VATCustomerCode.Value</Value>
+            <Left>16.63492cm</Left>
+          </Textbox>
+          <Textbox Name="textbox98">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=ReportLib.Language.GetSpecialFormat(Fields!RecurringInvoiceExchangeRate1.Value, 0)</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>25</ZIndex>
+            <Height>0.2in</Height>
+            <Width>2.15873cm</Width>
+            <Visibility>
+              <Hidden>=Iif( Fields!RecurringInvoiceControllingCurrency.Value   = "R",false,true)</Hidden>
+            </Visibility>
+            <Top>2.73016cm</Top>
+            <Value>=Fields!RecurringInvoiceExchangeRate1.Value</Value>
+            <Left>7.55555cm</Left>
+          </Textbox>
+          <Textbox Name="textbox134">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>24</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.15873cm</Width>
+            <Visibility>
+              <Hidden>=Iif( Fields!TriFlag.Value &lt;10,false,true)</Hidden>
+            </Visibility>
+            <Top>2.73016cm</Top>
+            <Value>= Fields!RecurringInvoiceControllingCurrency.Value</Value>
+            <Left>2.15873cm</Left>
+          </Textbox>
+          <Textbox Name="textbox135">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>23</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.96825cm</Width>
+            <Visibility>
+              <Hidden>=Iif( Fields!TriFlag.Value &lt;10,false,true)</Hidden>
+            </Visibility>
+            <Top>2.73015cm</Top>
+            <Value>Ctrl Curr:</Value>
+          </Textbox>
+          <Textbox Name="textbox136">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>22</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.4762cm</Width>
+            <Visibility>
+              <Hidden>=Iif( Fields!RecurringInvoiceControllingCurrency.Value = "R",false,true)</Hidden>
+            </Visibility>
+            <Top>2.73015cm</Top>
+            <Value>=Iif(( Fields!TriFlag.Value &lt;=7)and(Fields!TriFlag.Value &gt;=3), Fields!CustCurrencyCode.Value +":"+ First(Fields!EuroCurrencyCode.Value, "MultiCurrencySelect") ,"Inv Ex Rate:")</Value>
+            <Left>4.38096cm</Left>
+          </Textbox>
+          <Textbox Name="textbox137">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>21</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>4.69841cm</Width>
+            <Top>4.44445cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!BillToAddress2.Value</Value>
+            <Left>1.33333cm</Left>
+          </Textbox>
+          <Textbox Name="textbox138">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>20</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>7.80952cm</Width>
+            <Top>4.44445cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!ShipToDeliveryLocationAddress2.Value</Value>
+            <Left>10.28571cm</Left>
+          </Textbox>
+          <Textbox Name="textbox22">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>19</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.53968cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!CreatedDay.Value</Value>
+            <Left>16.12699cm</Left>
+          </Textbox>
+          <Textbox Name="textbox45">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>18</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.26985cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Day:</Value>
+            <Left>14.79365cm</Left>
+          </Textbox>
+          <Textbox Name="textbox56">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>17</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.46031cm</Width>
+            <Top>1.65079cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!RecurringInvoiceCurrencyCode.Value</Value>
+            <Left>13.07937cm</Left>
+          </Textbox>
+          <Textbox Name="textbox57">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>16</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.77778cm</Width>
+            <Top>1.65079cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Curr Code:</Value>
+            <Left>11.2381cm</Left>
+          </Textbox>
+          <Textbox Name="textbox21">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>15</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.61905cm</Width>
+            <Top>1.65079cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!CustomerID.Value</Value>
+            <Left>7.55556cm</Left>
+          </Textbox>
+          <Textbox Name="textbox63">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>14</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.39682cm</Width>
+            <Top>1.65079cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Cust Id:</Value>
+            <Left>6.09524cm</Left>
+          </Textbox>
+          <Textbox Name="textbox64">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=ReportLib.Language.GetDateFormat( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>13</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.53968cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!EndDate.Value</Value>
+            <Left>12.19048cm</Left>
+          </Textbox>
+          <Textbox Name="textbox66">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>12</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.8254cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>End:</Value>
+            <Left>11.30159cm</Left>
+          </Textbox>
+          <Textbox Name="textbox28">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>11</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.14286cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Begin:</Value>
+            <Left>6.92064cm</Left>
+          </Textbox>
+          <Textbox Name="textbox67">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=ReportLib.Language.GetDateFormat( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>10</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.53968cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!StartDate.Value</Value>
+            <Left>8.38095cm</Left>
+          </Textbox>
+          <Textbox Name="textbox70">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.8254cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!RecurringInvoiceStatus.Value</Value>
+            <Left>5.96825cm</Left>
+          </Textbox>
+          <Textbox Name="textbox73">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.88889cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>St:</Value>
+            <Left>5.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox74">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>4.12699cm</Width>
+            <Top>1.65079cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Fields!RecurringInvoiceReferenceNumber.Value</Value>
+            <Left>1.90476cm</Left>
+          </Textbox>
+          <Textbox Name="textbox75">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.84127cm</Width>
+            <Top>1.65079cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Rec Ref No:</Value>
+          </Textbox>
+          <Textbox Name="textbox25">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.98413cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value />
+            <Left>1.96825cm</Left>
+          </Textbox>
+          <Textbox Name="textbox26">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.89947cm</Width>
+            <Top>2.15872cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Copy From:</Value>
+            <Left>0.00529cm</Left>
+          </Textbox>
+          <Textbox Name="textbox30">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <Height>0.2in</Height>
+            <Width>0.57143cm</Width>
+            <Visibility>
+              <Hidden>=Iif( (Fields!RecurringInvoiceControllingCurrency.Value   = "R")and( Fields!TriFlag.Value &lt;=7)and(Fields!TriFlag.Value &gt;=3),false,true)</Hidden>
+            </Visibility>
+            <Top>2.73016cm</Top>
+            <Value>=Fields!RecurringInvoiceExchangeRateOperator2.Value</Value>
+            <Left>12.44445cm</Left>
+          </Textbox>
+          <Textbox Name="textbox76">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.4762cm</Width>
+            <Visibility>
+              <Hidden>=Iif( (Fields!RecurringInvoiceControllingCurrency.Value   = "R")and( Fields!TriFlag.Value &lt;=7)and(Fields!TriFlag.Value &gt;=3),false,true)</Hidden>
+            </Visibility>
+            <Top>2.73016cm</Top>
+            <Value>=Iif(( Fields!TriFlag.Value &lt;=7)and(Fields!TriFlag.Value &gt;=3), First(Fields!EuroCurrencyCode.Value, "MultiCurrencySelect") +":"+ First(Fields!LocalCurrencyCode.Value, "LocalCurrencySelect") ,"")</Value>
+            <Left>9.84127cm</Left>
+          </Textbox>
+          <Textbox Name="textbox90">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <Height>0.2in</Height>
+            <Width>0.44444cm</Width>
+            <Visibility>
+              <Hidden>=Iif( Fields!RecurringInvoiceControllingCurrency.Value   = "R",false,true)</Hidden>
+            </Visibility>
+            <Top>2.73016cm</Top>
+            <Value>=Fields!RecurringInvoiceExchangeRateOperator1.Value</Value>
+            <Left>6.98413cm</Left>
+          </Textbox>
+          <Textbox Name="textbox101">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=ReportLib.Language.GetSpecialFormat(Fields!RecurringInvoiceExchangeRate2.Value, 0)</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <Height>0.2in</Height>
+            <Width>2.15873cm</Width>
+            <Visibility>
+              <Hidden>=Iif( (Fields!RecurringInvoiceControllingCurrency.Value   = "R")and( Fields!TriFlag.Value &lt;=7)and(Fields!TriFlag.Value &gt;=3),false,true)</Hidden>
+            </Visibility>
+            <Top>2.73016cm</Top>
+            <Value>=Fields!RecurringInvoiceExchangeRate2.Value</Value>
+            <Left>13.07937cm</Left>
+          </Textbox>
+        </ReportItems>
+      </List>
+    </ReportItems>
+    <Style>
+      <BorderColor>
+        <Bottom>DarkBlue</Bottom>
+      </BorderColor>
+    </Style>
+    <Height>4.98in</Height>
+    <ColumnSpacing>0in</ColumnSpacing>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="FSDB">
+      <rd:DataSourceID>cb3dd503-37ad-4257-9757-7e7344de9429</rd:DataSourceID>
+      <DataSourceReference>FSDB</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code>
+
+
+
+Public shared function DecideMOCO (ByVal MOCO As string,ByVal value As string) As String
+	If MOCO =""
+		DecideMOCO =""
+	Else DecideMOCO = value
+	End If 
+End Function
+</Code>
+  <Width>7.4in</Width>
+  <DataSets>
+    <DataSet Name="SystemConfig">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyAddress1">
+          <DataField>CompanyAddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyState">
+          <DataField>CompanyState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyZip">
+          <DataField>CompanyZip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateNumberFormat">
+          <DataField>DateNumberFormat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbol">
+          <DataField>CurrencySymbol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencyCode">
+          <DataField>CurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbolPlacement">
+          <DataField>CurrencySymbolPlacement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencyCodeDescription">
+          <DataField>CurrencyCodeDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select 	CompanyName
+        ,CompanyAddress1
+        ,CompanyCity
+        ,CompanyState
+        ,CompanyCountry
+        ,CompanyZip
+	, DateNumberFormat
+	, CurrencySymbol
+	, s.DecimalPrecision
+              ,c.CurrencyCode
+	, CurrencySymbolPlacement
+	,CurrencyCodeDescription
+from 	FS_SystemConfig s
+	,FS_CurrencyCode c
+where	c.CurrencyCode='00000'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="CHOOSEDB">
+      <Fields>
+        <Field Name="DatabaseType">
+          <DataField>DatabaseType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>-----------------------------------------------------------------------------------------------------------
+-- NAME:	CHOOSEDB
+-- COPYRIGHT: Copyright 2004, SoftBrands Corporation. All rights reserved.
+-- REVISION:  $Revision: $
+--
+-- FUNCTION:  Find Database type is V(VAT) or TAX(S)
+--                   
+--	        
+--	        
+--	        
+----------------------------------------------------------------------------------------------------------
+
+
+select substring(CLBODY,72,1) as DatabaseType
+from dbo.Mfg_PARAMETR
+where CLTYPE = 'CR'
+and CLID = 'INCF'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="GLAccountMask">
+      <Fields>
+        <Field Name="AccountMask">
+          <DataField>AccountMask</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select AccountMask
+from FS_GLConfig</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="MultiCurrencySelect">
+      <Fields>
+        <Field Name="EuroCurrencyCode">
+          <DataField>EuroCurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select EuroCurrencyCode
+from FS_MultiCurrencyConfig</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="LocalCurrencySelect">
+      <Fields>
+        <Field Name="SystemCurrencyCode">
+          <DataField>SystemCurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocalBankID">
+          <DataField>LocalBankID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocalCurrencyCode">
+          <DataField>LocalCurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RestrictBankCashAccountJournalEntries">
+          <DataField>RestrictBankCashAccountJournalEntries</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BankCashAccountJournalEntryUserID">
+          <DataField>BankCashAccountJournalEntryUserID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RestrictBankAdjustments">
+          <DataField>RestrictBankAdjustments</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BankAdjustmentUserID">
+          <DataField>BankAdjustmentUserID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BankLocalCurrencyConfigRowVersion">
+          <DataField>BankLocalCurrencyConfigRowVersion</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="BankLocalCurrencyConfigKey">
+          <DataField>BankLocalCurrencyConfigKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select *
+from FS_BankLocalCurrencyConfig</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="TaxAuthoritySelect">
+      <Fields>
+        <Field Name="TaxAuthority">
+          <DataField>TaxAuthority</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select substring(i.CLBODY, 67, 1) TaxAuthority
+from Mfg_PARAMETR i
+where (i.CLTYPE = 'CR' and rtrim(i.CLID) = 'INCF')</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="IVRE">
+      <Fields>
+        <Field Name="RecurringInvoiceReferenceNumber">
+          <DataField>RecurringInvoiceReferenceNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceCurrencyCode">
+          <DataField>RecurringInvoiceCurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceLastMaintainedDate">
+          <DataField>RecurringInvoiceLastMaintainedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceStatus">
+          <DataField>RecurringInvoiceStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CreatedDay">
+          <DataField>CreatedDay</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceControllingCurrency">
+          <DataField>RecurringInvoiceControllingCurrency</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceExchangeRateOperator1">
+          <DataField>RecurringInvoiceExchangeRateOperator1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceExchangeRate1">
+          <DataField>RecurringInvoiceExchangeRate1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceExchangeRateOperator2">
+          <DataField>RecurringInvoiceExchangeRateOperator2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceExchangeRate2">
+          <DataField>RecurringInvoiceExchangeRate2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="BillToName">
+          <DataField>BillToName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToAddress1">
+          <DataField>BillToAddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToAddress2">
+          <DataField>BillToAddress2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToCity">
+          <DataField>BillToCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToState">
+          <DataField>BillToState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToZip">
+          <DataField>BillToZip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToCountry">
+          <DataField>BillToCountry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FOBPoint">
+          <DataField>FOBPoint</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToDeliveryLocationName">
+          <DataField>ShipToDeliveryLocationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToDeliveryLocationAddress1">
+          <DataField>ShipToDeliveryLocationAddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToDeliveryLocationAddress2">
+          <DataField>ShipToDeliveryLocationAddress2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToDeliveryLocationCity">
+          <DataField>ShipToDeliveryLocationCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToDeliveryLocationState">
+          <DataField>ShipToDeliveryLocationState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToDeliveryLocationZip">
+          <DataField>ShipToDeliveryLocationZip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToDeliveryLocationCountry">
+          <DataField>ShipToDeliveryLocationCountry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CarrierName">
+          <DataField>CarrierName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VATCustomerCode">
+          <DataField>VATCustomerCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TermsCode">
+          <DataField>TermsCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountPercent1">
+          <DataField>TermsDiscountPercent1</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountDays1">
+          <DataField>TermsDiscountDays1</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountPercent2">
+          <DataField>TermsDiscountPercent2</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountDays2">
+          <DataField>TermsDiscountDays2</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountPercent3">
+          <DataField>TermsDiscountPercent3</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountDays3">
+          <DataField>TermsDiscountDays3</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountPercent4">
+          <DataField>TermsDiscountPercent4</DataField>
+          <rd:TypeName>System.Single</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountDays4">
+          <DataField>TermsDiscountDays4</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="TermsDiscountNetDays">
+          <DataField>TermsDiscountNetDays</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="TermsMonthlyPaymentDay">
+          <DataField>TermsMonthlyPaymentDay</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="TermsMonthlyCutOffDay">
+          <DataField>TermsMonthlyCutOffDay</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="TermsMonthlyDelay">
+          <DataField>TermsMonthlyDelay</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="TotalLinesControllingAmount">
+          <DataField>TotalLinesControllingAmount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalTaxControllingAmount">
+          <DataField>TotalTaxControllingAmount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalRecurringInvoiceControllingAmount">
+          <DataField>TotalRecurringInvoiceControllingAmount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CommissionCode">
+          <DataField>CommissionCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AccountsReceivableAccount">
+          <DataField>AccountsReceivableAccount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceLineNumber">
+          <DataField>RecurringInvoiceLineNumber</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="RecurringLineItemNumber">
+          <DataField>RecurringLineItemNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceLineSalesAccount">
+          <DataField>RecurringInvoiceLineSalesAccount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceShipQuantity">
+          <DataField>RecurringInvoiceShipQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceControllingUnitPrice">
+          <DataField>RecurringInvoiceControllingUnitPrice</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="IsFederalPrimaryTaxExempt">
+          <DataField>IsFederalPrimaryTaxExempt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsStateSecondaryTaxExempt">
+          <DataField>IsStateSecondaryTaxExempt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsCountyTaxExempt">
+          <DataField>IsCountyTaxExempt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsMunicipalTaxExempt">
+          <DataField>IsMunicipalTaxExempt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecurringInvoiceCommissionCode">
+          <DataField>RecurringInvoiceCommissionCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerControllingCode">
+          <DataField>CustomerControllingCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustCurrencyCode">
+          <DataField>CustCurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustCurrencySymbol">
+          <DataField>CustCurrencySymbol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustDecimalPrecision">
+          <DataField>CustDecimalPrecision</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="CustCurrencyCodeDescription">
+          <DataField>CustCurrencyCodeDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustCurrencySymbolPlacement">
+          <DataField>CustCurrencySymbolPlacement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustIsEECMember">
+          <DataField>CustIsEECMember</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TriFlag">
+          <DataField>TriFlag</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>-----------------------------------------------------------------------------------------------------------
+
+-- NAME:   IVRE
+
+-- COPYRIGHT: Copyright 2004, SoftBrands Corporation. All rights reserved.
+
+-- REVISION:  $Revision: $
+
+
+--
+
+-- FUNCTION:  Display is different for VAT and Sales Tax.
+
+--            Display is different for different term code (D, M, S)
+
+--
+
+-------------------------------------------------------------------------------------------------------------
+
+
+select
+    T1.RIVREFNM   as   RecurringInvoiceReferenceNumber
+   ,T1.RIVCUSID   as   CustomerID
+   ,T1.RIVCURCD   as   RecurringInvoiceCurrencyCode
+   ,T1.RIVREVDT   as   RecurringInvoiceLastMaintainedDate
+   ,T1.RIVSTAT    as   RecurringInvoiceStatus
+   ,T1.RIVSTART   as   StartDate
+   ,T1.RIVEND     as   EndDate
+   ,T1.RIVDAY     as   CreatedDay
+   ,T1.RIVCNTCR   as   RecurringInvoiceControllingCurrency
+   ,T1.RIVEXOP    as   RecurringInvoiceExchangeRateOperator1
+   ,T1.RIVEXRT    as   RecurringInvoiceExchangeRate1
+   ,T1.RIVEXOP9   as   RecurringInvoiceExchangeRateOperator2
+   ,T1.RIVEXRT9   as   RecurringInvoiceExchangeRate2
+
+   -- bill to info
+   ,T2.CMB2NAME   as   BillToName
+   ,T2.CMB2AD1    as   BillToAddress1
+   ,T2.CMB2AD2    as   BillToAddress2
+   ,T2.CMB2CITY   as   BillToCity
+   ,T2.CMB2STAT   as   BillToState
+   ,T2.CMB2ZIP    as   BillToZip
+   ,T2.CMB2CNTR   as   BillToCountry
+   ,T2.CMFOB      as   FOBPoint
+
+   -- ship to info
+   ,T1.RIVNAME    as   ShipToDeliveryLocationName
+   ,T1.RIVAD1     as   ShipToDeliveryLocationAddress1
+   ,T1.RIVAD2     as   ShipToDeliveryLocationAddress2
+   ,T1.RIVCITY    as   ShipToDeliveryLocationCity
+   ,T1.RIVSTATE   as   ShipToDeliveryLocationState
+   ,T1.RIVZIP     as   ShipToDeliveryLocationZip
+   ,T1.RIVCNTR    as   ShipToDeliveryLocationCountry
+   ,T1.RIVSHVIA   as   CarrierName
+
+   -- VCC code (only for VAT)
+   ,T1.RIVVTCUS   as   VATCustomerCode
+
+   -- pay terms
+   ,T1.RIVPYHOW   as   TermsCode
+   ,T1.RIVTRPC1   as   TermsDiscountPercent1
+   ,T1.RIVTRDA1   as   TermsDiscountDays1
+   ,T1.RIVTRPC2   as   TermsDiscountPercent2
+   ,T1.RIVTRDA2   as   TermsDiscountDays2
+   ,T1.RIVTRPC3   as   TermsDiscountPercent3
+   ,T1.RIVTRDA3   as   TermsDiscountDays3
+   ,T1.RIVTRPC4   as   TermsDiscountPercent4
+   ,T1.RIVTRDA4   as   TermsDiscountDays4
+   ,T1.RIVTRNET   as   TermsDiscountNetDays
+   ,T1.RIVPYWEN   as   TermsMonthlyPaymentDay
+   ,T1.RIVCTOFF   as   TermsMonthlyCutOffDay
+   ,T1.RIVDELAY   as   TermsMonthlyDelay
+
+   ,T1.RIVLNTOT   as   TotalLinesControllingAmount
+   ,isnull(T5.TotalTaxControllingAmount,0) TotalTaxControllingAmount
+   ,T1.RIVTOTAM   as   TotalRecurringInvoiceControllingAmount
+
+   ,T1.RIVCOMCD   as   CommissionCode
+   ,T1.RIVARACT   as   AccountsReceivableAccount
+
+   -- line detail
+   ,T6.RIDLINE    as   RecurringInvoiceLineNumber
+   ,T6.RIDITEM    as   RecurringLineItemNumber
+   ,T6.RIDACCTN   as   RecurringInvoiceLineSalesAccount
+   ,T6.RIDQTYSH   as   RecurringInvoiceShipQuantity
+   ,T6.RIDUNTPR   as   RecurringInvoiceControllingUnitPrice
+   ,T6.RIDEXEMP   as   IsFederalPrimaryTaxExempt
+   ,T6.RIDEXEMP$2 as   IsStateSecondaryTaxExempt
+   ,T6.RIDEXEMP$3 as   IsCountyTaxExempt      -- (only for Sales Tax)
+   ,T6.RIDEXEMP$4 as   IsMunicipalTaxExempt   -- (only for Sales Tax)
+   ,T6.RIDCOMCD   as   RecurringInvoiceCommissionCode
+
+---------------------------------
+   ,T2.CMCNTCUR    as   CustomerControllingCode
+   ,T2.CMCURCOD   as   CustCurrencyCode
+   ,T7.CURRSYM  as   CustCurrencySymbol
+   ,T7.CURRPRE       as   CustDecimalPrecision
+   ,T7.CURRDESC    as   CustCurrencyCodeDescription
+   ,T7.CURRFORM   as CustCurrencySymbolPlacement
+   ,T7.CURREMU      as   CustIsEECMember
+   ,T1.RIVTRFLG   as   TriFlag
+   ,T8.IMDECPRE   as DecimalPrecision
+
+from dbo.Fin_RIVMAST T1 (READUNCOMMITTED)
+left join dbo.Mfg_CUSTMAST T2 (READUNCOMMITTED) on (T1.RIVCUSID = T2.CMCUSTID)
+left join (select sum(T4.RISTAXRV) as TotalTaxControllingAmount, T3._Row as ARRecurringInvoiceHeaderKey
+           from dbo.Fin_RIVMAST T3
+           inner join dbo.Fin_RIVTAX T4 on T4._RITAXDTL_OwnRow = T3._Row
+           group by T3._Row) T5 on T5.ARRecurringInvoiceHeaderKey = T1._Row
+left join dbo.Fin_RIVDTL T6 (READUNCOMMITTED) on (T1._Row = T6._RIMSTDTL_OwnRow)
+left join Mfg_CURRDEF T7 (READUNCOMMITTED) on (T2.CMCURCOD = T7.CURRCODE)
+left join Mfg_ITMMAST T8 (READUNCOMMITTED) on(T6.RIDITEM = T8.IMPN)
+where T1.RIVREFNM  = @RecRefNo</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@RecRefNo">
+            <Value>=Parameters!RecRefNo.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>0.4in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description>Accounts Receivable Recurring Invoice</Description>
+  <rd:ReportID>9d7f02b0-990c-4098-a34c-6419dbdb043c</rd:ReportID>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="RevisionLog">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Width>1.67708in</Width>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Top>0.17813in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>="05/10/04 initial revision."</Value>
+        <Left>1.75729in</Left>
+      </Textbox>
+      <Textbox Name="ReportName">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <Height>0.25in</Height>
+        <Width>1.67708in</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <Top>0.16875in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= "ArsIvre.rdl 7.4.04"</Value>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.42812in</Height>
+  </PageFooter>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="RecRefNo">
+      <DataType>String</DataType>
+      <Prompt>Recurring Invoice Reference Number</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

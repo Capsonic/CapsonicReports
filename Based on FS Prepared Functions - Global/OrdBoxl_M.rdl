@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <CodeModules>
+    <CodeModule>SoftBrands.FourthShift.RDLShared, Version=1.0.7400.0, Culture=neutral, PublicKeyToken=541b4aff0f04b60a</CodeModule>
+  </CodeModules>
+  <RightMargin>0.4in</RightMargin>
+  <Author>SoftBrands Manufacturing, Inc.</Author>
+  <Body>
+    <ReportItems>
+      <Textbox Name="DateNumberFormat">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <Height>0.2in</Height>
+        <Width>0.625in</Width>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Top>0.4in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!DateNumberFormat.Value, "SystemConfig")</Value>
+        <Left>0.05in</Left>
+      </Textbox>
+      <Textbox Name="textbox12">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>11pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <Height>0.50794cm</Height>
+        <Width>4.95238cm</Width>
+        <Top>3.93651cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!WorkCenter.Value, "MOMBOXL")</Value>
+        <Left>1.65079cm</Left>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>11pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <Height>0.2in</Height>
+        <Top>0.12698cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!SysAdd0.Value, "MOMBOXL")</Value>
+        <Left>1.46032cm</Left>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <Height>0.50794cm</Height>
+        <Width>15.49207cm</Width>
+        <Top>0.69841cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!SysAdd1.Value, "MOMBOXL")</Value>
+        <Left>1.84127cm</Left>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <Height>0.50794cm</Height>
+        <Width>15.49207cm</Width>
+        <Top>1.20635cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= Iif( len(trim(First(Fields!SysAdd2.Value, "MOMBOXL") ))&gt;0 , First(Fields!SysAdd2.Value, "MOMBOXL") , First(Fields!SysAdd3.Value, "MOMBOXL") )</Value>
+        <Left>1.84127cm</Left>
+      </Textbox>
+      <Textbox Name="textbox16">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Height>0.50794cm</Height>
+        <Width>15.49207cm</Width>
+        <Top>2.34921cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= Iif( len(trim(First(Fields!SysAdd2.Value, "MOMBOXL") ))&gt;0 , First(Fields!SysAdd4.Value, "MOMBOXL") , nothing)</Value>
+        <Left>1.84127cm</Left>
+      </Textbox>
+      <Textbox Name="textbox17">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Height>0.50794cm</Height>
+        <Width>15.49207cm</Width>
+        <Top>1.77777cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= Iif( len(trim(First(Fields!SysAdd2.Value, "MOMBOXL") ))&gt;0 , First(Fields!SysAdd3.Value, "MOMBOXL") , First(Fields!SysAdd4.Value, "MOMBOXL") )</Value>
+        <Left>1.84127cm</Left>
+      </Textbox>
+      <Textbox Name="textbox7">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>11pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <rd:DefaultName>textbox7</rd:DefaultName>
+        <Height>0.50794cm</Height>
+        <Width>1.39683cm</Width>
+        <Top>0.12698cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>From:</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>11pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Height>0.50794cm</Height>
+        <Width>1.39683cm</Width>
+        <Top>3.9365cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>WC:</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>11pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Width>15.74604cm</Width>
+        <Top>4.57143cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= Parameters!avcMoNumber.Value</Value>
+        <Left>1.65079cm</Left>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>11pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <Width>1.39683cm</Width>
+        <Top>4.57143cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>MO:</Value>
+        <Left>0.19048cm</Left>
+      </Textbox>
+    </ReportItems>
+    <Style>
+      <BorderColor>
+        <Bottom>DarkBlue</Bottom>
+      </BorderColor>
+    </Style>
+    <Height>2in</Height>
+    <ColumnSpacing>0in</ColumnSpacing>
+  </Body>
+  <TopMargin>2.3cm</TopMargin>
+  <DataSources>
+    <DataSource Name="FSDB">
+      <rd:DataSourceID>cb3dd503-37ad-4257-9757-7e7344de9429</rd:DataSourceID>
+      <DataSourceReference>FSDB</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code>Public shared function SetStartItem (ByVal value As string) As String
+	SetStartItem = value
+End Function</Code>
+  <Width>17.46032cm</Width>
+  <DataSets>
+    <DataSet Name="SystemConfig">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyAddress1">
+          <DataField>CompanyAddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyState">
+          <DataField>CompanyState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyZip">
+          <DataField>CompanyZip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateNumberFormat">
+          <DataField>DateNumberFormat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbol">
+          <DataField>CurrencySymbol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbolPlacement">
+          <DataField>CurrencySymbolPlacement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select 	CompanyName
+        ,CompanyAddress1
+        ,CompanyCity
+        ,CompanyState
+        ,CompanyCountry
+        ,CompanyZip
+	, DateNumberFormat
+	, CurrencySymbol
+	, s.DecimalPrecision
+	, CurrencySymbolPlacement
+from 	FS_SystemConfig s
+	,FS_CurrencyCode c
+where	c.CurrencyCode='00000'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="MOMBOXL">
+      <Fields>
+        <Field Name="SysAdd0">
+          <DataField>SysAdd0</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SysAdd1">
+          <DataField>SysAdd1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SysAdd2">
+          <DataField>SysAdd2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SysAdd3">
+          <DataField>SysAdd3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SysAdd4">
+          <DataField>SysAdd4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MONumber">
+          <DataField>MONumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WorkCenter">
+          <DataField>WorkCenter</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>exec usp_ReportMOBoxLabel @avcMoNumber</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@avcMoNumber">
+            <Value>=Parameters!avcMoNumber.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>0.8cm</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description>MO Box Labels</Description>
+  <rd:ReportID>9d7f02b0-990c-4098-a34c-6419dbdb043c</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="avcMoNumber">
+      <DataType>String</DataType>
+      <Prompt>Manufacturing Order Number</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

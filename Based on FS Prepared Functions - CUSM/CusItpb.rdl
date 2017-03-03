@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox16">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <rd:DefaultName>textbox16</rd:DefaultName>
+        <Height>0.5471cm</Height>
+        <Width>2.80423cm</Width>
+        <Top>1.52381cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Function: ITPB</Value>
+        <Left>0.05291cm</Left>
+      </Textbox>
+      <Textbox Name="textbox17">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <rd:DefaultName>textbox17</rd:DefaultName>
+        <Height>0.63491cm</Height>
+        <Width>3.875in</Width>
+        <Top>2.28571cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>=Code.SetStartItem( Parameters!FromItem.Value )</Value>
+        <Left>3.475in</Left>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <TextAlign>Center</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>3.99167in</Width>
+        <Top>0.3in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>=ReportItems!CompanyName.Value</Value>
+        <Left>1.70416in</Left>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <Format>=ReportLib.Language.GetDateFormat(ReportItems!DateNumberFormat.Value, "/", "L")+" HH:mm:ss"</Format>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>1.66667in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>= Globals!ExecutionTime</Value>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>6.24339cm</Width>
+        <CanGrow>true</CanGrow>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+        <Left>4.875in</Left>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <Height>0.63491cm</Height>
+        <Width>3.42856cm</Width>
+        <Top>2.28571cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Starting Item:</Value>
+        <Left>5.26984cm</Left>
+      </Textbox>
+      <Textbox Name="txt16">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>12pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <Color>Navy</Color>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Height>0.3in</Height>
+        <Width>3.275in</Width>
+        <Top>0.55in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Item Price Book</Value>
+        <Left>2.0625in</Left>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Width>3.42856cm</Width>
+        <Top>3.04762cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Currency Code:</Value>
+        <Left>5.26984cm</Left>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <Width>3.09524cm</Width>
+        <Top>3.04762cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>=Code.SetStartItem( Parameters!CurrencyCode.Value )</Value>
+        <Left>3.475in</Left>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>3.68253cm</Height>
+  </PageHeader>
+  <CodeModules>
+    <CodeModule>SoftBrands.FourthShift.RDLShared, Version=1.0.7400.0, Culture=neutral, PublicKeyToken=541b4aff0f04b60a</CodeModule>
+  </CodeModules>
+  <RightMargin>0.4in</RightMargin>
+  <Author>SoftBrands Manufacturing, Inc.</Author>
+  <Body>
+    <ReportItems>
+      <Table Name="ItemMaster">
+        <Height>0.4in</Height>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+          <BorderWidth>
+            <Top>3pt</Top>
+          </BorderWidth>
+          <BorderStyle>
+            <Top>None</Top>
+          </BorderStyle>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.2in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>900</FontWeight>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Item</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>900</FontWeight>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Description</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>900</FontWeight>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Unit Price</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox12">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>900</FontWeight>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Um</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderWidth>
+                          <Bottom>1.5pt</Bottom>
+                        </BorderWidth>
+                        <BorderColor>
+                          <Default>Navy</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.2in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ItemNumber">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <rd:DefaultName>ItemNumber</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!ItemNumber.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ItemDescription">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <rd:DefaultName>ItemDescription</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!ItemDescription.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="IsSerialized">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>=ReportLib.Language.GetCostFormat( Fields!ItemLocalUnitPrice.Value  , First(Fields!DecimalPrecision.Value, "SystemConfig") )</Format>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <rd:DefaultName>IsSerialized</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!ItemLocalUnitPrice.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="IsInspectionRequired">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <rd:DefaultName>IsInspectionRequired</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!ItemUM.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CompanyName">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>=Iif(RowNumber("ItemMaster") Mod 2, "White", "AliceBlue")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                      <Value>= First(Fields!CompanyName.Value, "SystemConfig")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DateNumberFormat">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                      <CanGrow>true</CanGrow>
+                      <Value>= First(Fields!DateNumberFormat.Value, "SystemConfig")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <DataSetName>ITPB</DataSetName>
+        <Top>0.15in</Top>
+        <Width>18.04366cm</Width>
+        <TableColumns>
+          <TableColumn>
+            <Width>2.7in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.4in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.49In</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.03in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.03in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style>
+      <BorderColor>
+        <Bottom>DarkBlue</Bottom>
+      </BorderColor>
+    </Style>
+    <Height>0.6in</Height>
+    <ColumnSpacing>0in</ColumnSpacing>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="FSDB">
+      <rd:DataSourceID>cb3dd503-37ad-4257-9757-7e7344de9429</rd:DataSourceID>
+      <DataSourceReference>FSDB</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code>Public shared function SetStartItem (ByVal value As string) As String
+	SetStartItem = value
+End Function</Code>
+  <Width>7.4in</Width>
+  <DataSets>
+    <DataSet Name="SystemConfig">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateNumberFormat">
+          <DataField>DateNumberFormat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbol">
+          <DataField>CurrencySymbol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbolPlacement">
+          <DataField>CurrencySymbolPlacement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select 	CompanyName
+	, DateNumberFormat
+	, CurrencySymbol
+	, s.DecimalPrecision
+	, CurrencySymbolPlacement
+from 	FS_SystemConfig s
+	,FS_CurrencyCode c
+where	c.CurrencyCode='00000'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ITPB">
+      <Fields>
+        <Field Name="ItemNumber">
+          <DataField>ItemNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemDescription">
+          <DataField>ItemDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemUM">
+          <DataField>ItemUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemLocalUnitPrice">
+          <DataField>ItemLocalUnitPrice</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>exec usp_ReportItemPriceBook @CurrencyCode,@FromItem,@ToItem</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@CurrencyCode">
+            <Value>=Parameters!CurrencyCode.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@FromItem">
+            <Value>=Parameters!FromItem.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ToItem">
+            <Value>=Parameters!ToItem.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="CurrencySelect">
+      <Fields>
+        <Field Name="CurrencyCode">
+          <DataField>CurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbol">
+          <DataField>CurrencySymbol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbolPlacement">
+          <DataField>CurrencySymbolPlacement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>if @CurrencyCode = '00000'
+
+select 
+T1.CurrencyCode
+,T1.CurrencySymbol
+,T1.CurrencySymbolPlacement
+,T1.DecimalPrecision
+from dbo.FS_CurrencyCode T1 (readuncommitted)
+where T1.CurrencyCode = '00000'
+
+
+else  
+
+
+
+select 
+case T1.CurrencyCode
+ when '00000' then T2.LocalCurrencyCode
+ else T1.CurrencyCode
+ end as CurrencyCode
+,T1.CurrencySymbol
+,T1.CurrencySymbolPlacement
+,T1.DecimalPrecision
+from dbo.FS_CurrencyCode T1 (readuncommitted)
+left join dbo.FS_BankLocalCurrencyConfig T2 (readuncommitted) on (T1.CurrencyCode = T2.SystemCurrencyCode)
+where T1.CurrencyCode = @CurrencyCode  or T2.LocalCurrencyCode = @CurrencyCode</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@CurrencyCode">
+            <Value>=Parameters!CurrencyCode.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>0.4in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description>Item Price Book</Description>
+  <rd:ReportID>9d7f02b0-990c-4098-a34c-6419dbdb043c</rd:ReportID>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="RevisionLog">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Width>1.67708in</Width>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Top>0.17813in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>="05/10/04 initial revision."</Value>
+        <Left>1.75729in</Left>
+      </Textbox>
+      <Textbox Name="ReportName">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <Height>0.25in</Height>
+        <Width>1.67708in</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <Top>0.16875in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= "CusItpb.rdl 7.4.03"</Value>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.42812in</Height>
+  </PageFooter>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="FromItem">
+      <DataType>String</DataType>
+      <Prompt>From Item Number</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ToItem">
+      <DataType>String</DataType>
+      <Prompt>Thru Item Number</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CurrencyCode">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>00000</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Currency Code</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

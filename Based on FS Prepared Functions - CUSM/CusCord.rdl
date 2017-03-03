@@ -1,0 +1,2565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox15">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <Format>=ReportLib.Language.GetDateFormat(ReportItems!DateNumberFormat.Value, "/", "L")+" HH:mm:ss"</Format>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Width>1.66667in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>= Globals!ExecutionTime</Value>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Width>6.24339cm</Width>
+        <CanGrow>true</CanGrow>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+        <Left>4.9in</Left>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.25in</Height>
+  </PageHeader>
+  <CodeModules>
+    <CodeModule>SoftBrands.FourthShift.RDLShared, Version=1.0.7400.0, Culture=neutral, PublicKeyToken=541b4aff0f04b60a</CodeModule>
+  </CodeModules>
+  <RightMargin>0.4in</RightMargin>
+  <Author>SoftBrands Manufacturing, Inc.</Author>
+  <Body>
+    <ReportItems>
+      <Textbox Name="DateNumberFormat">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>24</ZIndex>
+        <Height>0.2in</Height>
+        <Width>0.625in</Width>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Top>0.05in</Top>
+        <Value>= First(Fields!DateNumberFormat.Value, "SystemConfig")</Value>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+      </Textbox>
+      <Rectangle Name="rectangle3">
+        <ZIndex>23</ZIndex>
+        <ReportItems>
+          <Textbox Name="textbox109">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>30</ZIndex>
+            <Height>0.50794cm</Height>
+            <Top>1.26984cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_RC_1.Value)= "~",nothing, Parameters!Screen_RC_1.Value)</Value>
+            <Left>13.96825cm</Left>
+          </Textbox>
+          <Textbox Name="textbox110">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>29</ZIndex>
+            <Height>0.50794cm</Height>
+            <Top>1.84127cm</Top>
+            <Value>=Iif( trim(Parameters!Screen_RC_2.Value)= "~",nothing, Parameters!Screen_RC_2.Value)</Value>
+            <CanGrow>true</CanGrow>
+            <Left>13.96825cm</Left>
+          </Textbox>
+          <Textbox Name="textbox111">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>28</ZIndex>
+            <Height>0.50794cm</Height>
+            <Top>2.4127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_RC_3.Value)= "~",nothing, Parameters!Screen_RC_3.Value)</Value>
+            <Left>13.96825cm</Left>
+          </Textbox>
+          <Textbox Name="textbox71">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>27</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.88889cm</Width>
+            <Top>0.69841cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>UM</Value>
+            <Left>3.17461cm</Left>
+          </Textbox>
+          <Textbox Name="textbox65">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>26</ZIndex>
+            <Height>0.2in</Height>
+            <Width>2.98413cm</Width>
+            <Top>0.12698cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Quantity</Value>
+            <Left>0.06349cm</Left>
+          </Textbox>
+          <Textbox Name="textbox67">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>25</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Height>0.50794cm</Height>
+            <Width>1.58729cm</Width>
+            <Top>0.69841cm</Top>
+            <Value>Stk</Value>
+            <Left>7.3016cm</Left>
+          </Textbox>
+          <Textbox Name="textbox69">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>24</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>0.69841cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Bin</Value>
+            <Left>9.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox73">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>23</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.82539cm</Width>
+            <Top>0.69841cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>IC</Value>
+            <Left>12.25396cm</Left>
+          </Textbox>
+          <Textbox Name="textbox64">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>22</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.98413cm</Width>
+            <Top>0.69841cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Iif( Parameters!ReceiveType.Value = "X" or Parameters!ReceiveType.Value = "Y", "To Reverse", Iif( Parameters!ReceiveType.Value = "E" or Parameters!ReceiveType.Value = "R", "Received", nothing))</Value>
+            <Left>0.06349cm</Left>
+          </Textbox>
+          <Textbox Name="textbox68">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>21</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.98413cm</Width>
+            <Top>0.69841cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Move Qty</Value>
+            <Left>4.19048cm</Left>
+          </Textbox>
+          <Textbox Name="textbox70">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>20</ZIndex>
+            <Height>0.2in</Height>
+            <Width>2.03175cm</Width>
+            <Top>0.12698cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Move To</Value>
+            <Left>7.3016cm</Left>
+          </Textbox>
+          <Textbox Name="textbox80">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>19</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.8254cm</Width>
+            <Top>0.12698cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Loc</Value>
+            <Left>12.25396cm</Left>
+          </Textbox>
+          <Textbox Name="textbox89">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>18</ZIndex>
+            <Height>0.50794cm</Height>
+            <Top>0.12698cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Insp</Value>
+            <Left>13.14285cm</Left>
+          </Textbox>
+          <Textbox Name="textbox90">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>17</ZIndex>
+            <Height>0.50794cm</Height>
+            <Top>0.69841cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Code</Value>
+            <Left>13.14285cm</Left>
+          </Textbox>
+          <Textbox Name="textbox91">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>16</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.82539cm</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_IC_1.Value)= "~",nothing,  Parameters!Screen_IC_1.Value)</Value>
+            <Top>1.26984cm</Top>
+            <Left>12.25396cm</Left>
+          </Textbox>
+          <Textbox Name="textbox92">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>15</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.88889cm</Width>
+            <Top>1.26984cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_UM.Value)= "~",nothing,  Parameters!Screen_UM.Value)</Value>
+            <Left>3.17461cm</Left>
+          </Textbox>
+          <Textbox Name="textbox93">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>14</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.98413cm</Width>
+            <Top>1.26984cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_MoveQty_1.Value)= "~",nothing,  Parameters!Screen_MoveQty_1.Value)</Value>
+            <Left>4.19048cm</Left>
+          </Textbox>
+          <Textbox Name="textbox94">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>13</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.58729cm</Width>
+            <Top>1.26984cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_Stk_1.Value)= "~",nothing,  Parameters!Screen_Stk_1.Value)</Value>
+            <Left>7.3016cm</Left>
+          </Textbox>
+          <Textbox Name="textbox95">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>12</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>1.26984cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_Bin_1.Value)= "~",nothing,  Parameters!Screen_Bin_1.Value)</Value>
+            <Left>9.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox96">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>11</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.275in</Width>
+            <Top>1.26984cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_InspCode_1.Value)= "~",nothing, Parameters!Screen_InspCode_1.Value)</Value>
+            <Left>13.14285cm</Left>
+          </Textbox>
+          <Textbox Name="textbox97">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>10</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.98413cm</Width>
+            <Top>1.26984cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_QtyReceived.Value)= "~",nothing,  Parameters!Screen_QtyReceived.Value)</Value>
+            <Left>0.06349cm</Left>
+          </Textbox>
+          <Textbox Name="textbox98">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.82539cm</Width>
+            <Top>1.84127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_IC_2.Value)= "~",nothing,  Parameters!Screen_IC_2.Value)</Value>
+            <Left>12.25396cm</Left>
+          </Textbox>
+          <Textbox Name="textbox99">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.58729cm</Width>
+            <Top>1.84127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_Stk_2.Value)= "~",nothing,  Parameters!Screen_Stk_2.Value)</Value>
+            <Left>7.3016cm</Left>
+          </Textbox>
+          <Textbox Name="textbox100">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>1.84127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_Bin_2.Value)= "~",nothing,  Parameters!Screen_Bin_2.Value)</Value>
+            <Left>9.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox101">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.275in</Width>
+            <Top>1.84127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_InspCode_2.Value)= "~",nothing, Parameters!Screen_InspCode_2.Value)</Value>
+            <Left>13.14285cm</Left>
+          </Textbox>
+          <Textbox Name="textbox102">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.98413cm</Width>
+            <Top>1.84127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_MoveQty_2.Value)= "~",nothing,  Parameters!Screen_MoveQty_2.Value)</Value>
+            <Left>4.19048cm</Left>
+          </Textbox>
+          <Textbox Name="textbox103">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.275in</Width>
+            <Top>2.4127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_InspCode_3.Value)= "~",nothing, Parameters!Screen_InspCode_3.Value)</Value>
+            <Left>13.14285cm</Left>
+          </Textbox>
+          <Textbox Name="textbox104">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.1746cm</Width>
+            <Top>2.4127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_Bin_3.Value)= "~",nothing,  Parameters!Screen_Bin_3.Value)</Value>
+            <Left>9.01587cm</Left>
+          </Textbox>
+          <Textbox Name="textbox105">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.58729cm</Width>
+            <Top>2.4127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_Stk_3.Value)= "~",nothing,  Parameters!Screen_Stk_3.Value)</Value>
+            <Left>7.3016cm</Left>
+          </Textbox>
+          <Textbox Name="textbox106">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>=ReportLib.Language.DateLanguage( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Language>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>2.98413cm</Width>
+            <Top>2.4127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_MoveQty_3.Value)= "~",nothing,  Parameters!Screen_MoveQty_3.Value)</Value>
+            <Left>4.19048cm</Left>
+          </Textbox>
+          <Textbox Name="textbox107">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <Height>0.50794cm</Height>
+            <Width>0.82539cm</Width>
+            <Top>2.4127cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif( trim(Parameters!Screen_IC_3.Value)= "~",nothing,  Parameters!Screen_IC_3.Value)</Value>
+            <Left>12.25396cm</Left>
+          </Textbox>
+        </ReportItems>
+        <Height>3.04762cm</Height>
+        <Width>14.66666cm</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Top>12.95238cm</Top>
+        <Left>2.98413cm</Left>
+      </Rectangle>
+      <Rectangle Name="rectangle2">
+        <ZIndex>22</ZIndex>
+        <ReportItems>
+          <Textbox Name="textbox29">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=ReportLib.Language.GetQtyFormat( First(Fields!DecimalPrecision.Value, "CUSCORD") )</Format>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <Language>= ReportLib.Language.DateLanguage(First(Fields!DateNumberFormat.Value, "SystemConfig"))</Language>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.42856cm</Width>
+            <Top>0.95238cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CustOpenQty.Value, "CUSCORD")</Value>
+            <Left>0.31746cm</Left>
+          </Textbox>
+          <Textbox Name="textbox32">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>3.42856cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Open Qty</Value>
+            <Left>0.31746cm</Left>
+          </Textbox>
+          <Textbox Name="textbox25">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <Height>0.2in</Height>
+            <Width>0.95238cm</Width>
+            <Top>0.95238cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CustomerItemUM.Value, "CUSCORD")</Value>
+            <Left>3.80952cm</Left>
+          </Textbox>
+          <Textbox Name="textbox26">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>0.95238cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>UM</Value>
+            <Left>3.80952cm</Left>
+          </Textbox>
+          <Textbox Name="textbox35">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.39682cm</Width>
+            <Top>0.95238cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CustomerItemUMConversion.Value, "CUSCORD")</Value>
+            <Left>4.8254cm</Left>
+          </Textbox>
+          <Textbox Name="textbox38">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>1.39682cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Convert</Value>
+            <Left>4.8254cm</Left>
+          </Textbox>
+          <Textbox Name="textbox42">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>4.69841cm</Width>
+            <Top>0.95238cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CustItem.Value, "CUSCORD")</Value>
+            <Left>6.28571cm</Left>
+          </Textbox>
+          <Textbox Name="textbox45">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>4.69841cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Item</Value>
+            <Left>6.28571cm</Left>
+          </Textbox>
+          <Textbox Name="textbox48">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <Height>0.50794cm</Height>
+            <Width>6.03175cm</Width>
+            <Top>0.95238cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CustDesc.Value, "CUSCORD")</Value>
+            <Left>11.11111cm</Left>
+          </Textbox>
+          <Textbox Name="textbox59">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <Height>0.50794cm</Height>
+            <Width>6.03175cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Description</Value>
+            <Left>11.11111cm</Left>
+          </Textbox>
+        </ReportItems>
+        <Height>1.77778cm</Height>
+        <Width>17.20635cm</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Top>9.77777cm</Top>
+        <Left>0.57143cm</Left>
+      </Rectangle>
+      <Table Name="table1">
+        <Height>1.5746cm</Height>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <TextAlign>Left</TextAlign>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.21in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox49">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>29</ZIndex>
+                      <rd:DefaultName>textbox49</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox50">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>28</ZIndex>
+                      <rd:DefaultName>textbox50</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Open</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox51">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>27</ZIndex>
+                      <rd:DefaultName>textbox51</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox52">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>26</ZIndex>
+                      <rd:DefaultName>textbox52</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Ln#</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox53">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>25</ZIndex>
+                      <rd:DefaultName>textbox53</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Ln#</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox54">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>24</ZIndex>
+                      <rd:DefaultName>textbox54</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox55">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>23</ZIndex>
+                      <rd:DefaultName>textbox55</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Start</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox56">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>22</ZIndex>
+                      <rd:DefaultName>textbox56</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Need</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox57">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>21</ZIndex>
+                      <rd:DefaultName>textbox57</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Sched</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox58">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>20</ZIndex>
+                      <rd:DefaultName>textbox58</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.21in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>19</ZIndex>
+                      <rd:DefaultName>textbox18</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Ln #</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>18</ZIndex>
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Qty</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>17</ZIndex>
+                      <rd:DefaultName>textbox20</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>UM</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox27">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>16</ZIndex>
+                      <rd:DefaultName>textbox27</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Sta</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox43">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <rd:DefaultName>textbox43</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Typ</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox39">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <rd:DefaultName>textbox39</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Item</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox36">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <rd:DefaultName>textbox36</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox33">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <rd:DefaultName>textbox33</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox30">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <rd:DefaultName>textbox30</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox46">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>8pt</FontSize>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <rd:DefaultName>textbox46</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Description</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.2in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!COLineNumber.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>=ReportLib.Language.GetQtyFormat( Fields!DecimalPrecision.Value )</Format>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <Language>= ReportLib.Language.DateLanguage(First(Fields!DateNumberFormat.Value, "SystemConfig"))</Language>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!OpenQuantity.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox23">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <rd:DefaultName>textbox23</rd:DefaultName>
+                      <Value>= Fields!UM.Value</Value>
+                      <CanGrow>true</CanGrow>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox28">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <rd:DefaultName>textbox28</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!LineStatus.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox44">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <rd:DefaultName>textbox44</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!OrderType.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox41">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <rd:DefaultName>textbox41</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!Item.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox37">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>=ReportLib.Language.GetDateFormat( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Format>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <rd:DefaultName>textbox37</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!StartDate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox34">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>=ReportLib.Language.GetDateFormat( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Format>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <rd:DefaultName>textbox34</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!NeedDate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox31">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>=ReportLib.Language.GetDateFormat( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Format>
+                        <FontSize>7pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <rd:DefaultName>textbox31</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!ScheduleDate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox47">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontSize>7pt</FontSize>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <rd:DefaultName>textbox47</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>= Fields!ItemDesc.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <DataSetName>CUSCORD</DataSetName>
+        <Top>5.71429cm</Top>
+        <Width>18.73015cm</Width>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.8254cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.96825cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.69841cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.7619cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.7619cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.42857cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.39683cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.39683cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.33333cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>6.15873cm</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+      <Rectangle Name="rectangle1">
+        <ZIndex>20</ZIndex>
+        <ReportItems>
+          <Textbox Name="textbox2">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>11</ZIndex>
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <Height>0.63492cm</Height>
+            <Width>2.60317cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Cust Id</Value>
+            <Left>4.19048cm</Left>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>10</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>2.60316cm</Width>
+            <Top>1.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CustomerID.Value, "CUSCORD")</Value>
+            <Left>4.19048cm</Left>
+          </Textbox>
+          <Textbox Name="textbox4">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Height>0.63492cm</Height>
+            <Width>3.93651cm</Width>
+            <Top>1.01587cm</Top>
+            <Value>= First(Fields!CONumber.Value, "CUSCORD")</Value>
+            <Left>0.075in</Left>
+          </Textbox>
+          <Textbox Name="textbox5">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>3.93651cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>CO Number</Value>
+            <Left>0.075in</Left>
+          </Textbox>
+          <Textbox Name="textbox6">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>1.26983cm</Width>
+            <Top>1.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CSR.Value, "CUSCORD")</Value>
+            <Left>6.92063cm</Left>
+          </Textbox>
+          <Textbox Name="textbox7">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>1.26984cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>CSR</Value>
+            <Left>6.92063cm</Left>
+          </Textbox>
+          <Textbox Name="textbox8">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>2.2857cm</Width>
+            <Top>1.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= Iif( First(Fields!COStatus.Value, "CUSCORD")
+ &lt; 2,"PRE", Iif( First(Fields!COStatus.Value, "CUSCORD")
+= 2,"FPL", Iif( First(Fields!COStatus.Value, "CUSCORD")
+= 3, "OPN" , Iif( First(Fields!COStatus.Value, "CUSCORD")
+= 4 ,"REL", Iif( First(Fields!COStatus.Value, "CUSCORD")
+&gt; 4,"COM", nothing)))))</Value>
+            <Left>8.31746cm</Left>
+          </Textbox>
+          <Textbox Name="textbox9">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>2.28571cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Status</Value>
+            <Left>8.31746cm</Left>
+          </Textbox>
+          <Textbox Name="textbox10">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>=ReportLib.Language.GetDateFormat( First(Fields!DateNumberFormat.Value, "SystemConfig") )</Format>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>2.41268cm</Width>
+            <Top>1.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!COLastMaintainedDate.Value, "CUSCORD")</Value>
+            <Left>10.73016cm</Left>
+          </Textbox>
+          <Textbox Name="textbox11">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>2.41269cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Rev Date</Value>
+            <Left>10.73016cm</Left>
+          </Textbox>
+          <Textbox Name="textbox12">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <Height>0.63492cm</Height>
+            <Width>4.95237cm</Width>
+            <Top>1.01587cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>= First(Fields!CustomerName.Value, "CUSCORD")</Value>
+            <Left>13.26984cm</Left>
+          </Textbox>
+          <Textbox Name="textbox14">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <Height>0.63492cm</Height>
+            <Width>4.95238cm</Width>
+            <Top>0.38095cm</Top>
+            <CanGrow>true</CanGrow>
+            <Value>Customer Name</Value>
+            <Left>13.26984cm</Left>
+          </Textbox>
+        </ReportItems>
+        <Height>1.90476cm</Height>
+        <Width>18.4762cm</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Top>2.28571cm</Top>
+        <Left>0.06349cm</Left>
+      </Rectangle>
+      <Textbox Name="textbox1">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <TextAlign>Center</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>19</ZIndex>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Height>0.25in</Height>
+        <Width>5.37292in</Width>
+        <Top>0.12698cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!CompanyName.Value, "SystemConfig")</Value>
+        <Left>1.01354in</Left>
+      </Textbox>
+      <Textbox Name="textbox40">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>12pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <Color>Navy</Color>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>18</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>8.00002cm</Width>
+        <Top>0.88889cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Customer Order Receipt/Reverse</Value>
+        <Left>5.39682cm</Left>
+      </Textbox>
+      <Textbox Name="textbox16">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>17</ZIndex>
+        <rd:DefaultName>textbox16</rd:DefaultName>
+        <Height>0.5471cm</Height>
+        <Width>2.80423cm</Width>
+        <Top>0.7619cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Function: CORV</Value>
+      </Textbox>
+      <Textbox Name="textbox17">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>16</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>3.80952cm</Width>
+        <Top>4.69841cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Receiving Type:</Value>
+        <Left>1.77778cm</Left>
+      </Textbox>
+      <Textbox Name="textbox24">
+        <ZIndex>15</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>4.69841cm</Width>
+        <Top>8.38095cm</Top>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>Customer Item</Value>
+        <Left>8.7619cm</Left>
+      </Textbox>
+      <Textbox Name="textbox60">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>14</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>1.52381cm</Width>
+        <Top>11.9365cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!Require.Value, "CUSCORD")</Value>
+        <Left>9.39682cm</Left>
+      </Textbox>
+      <Textbox Name="textbox61">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>13</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>2.03175cm</Width>
+        <Top>11.9365cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Insp Reqd:</Value>
+        <Left>7.23809cm</Left>
+      </Textbox>
+      <Textbox Name="textbox62">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>2.79365cm</Width>
+        <Top>11.9365cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!Stk.Value, "CUSCORD")+"   "+First(Fields!Bin.Value, "CUSCORD")</Value>
+        <Left>14.09524cm</Left>
+      </Textbox>
+      <Textbox Name="textbox63">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>2.92063cm</Width>
+        <Top>11.9365cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Preferred Loc:</Value>
+        <Left>11.04762cm</Left>
+      </Textbox>
+      <Textbox Name="textbox74">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <Format>=ReportLib.Language.GetQtyFormat( First(Fields!DecimalPrecision.Value, "CUSCORD") )</Format>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <Language>= ReportLib.Language.DateLanguage(First(Fields!DateNumberFormat.Value, "SystemConfig"))</Language>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>1.90476cm</Width>
+        <Top>16.38095cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!RequiredQuantity.Value, "CUSCORD")</Value>
+        <Left>3.93651cm</Left>
+      </Textbox>
+      <Textbox Name="textbox75">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>3.80952cm</Width>
+        <Top>16.38095cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Total Qty Ordered:</Value>
+      </Textbox>
+      <Textbox Name="textbox76">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>0.88889cm</Width>
+        <Top>16.38095cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!CustomerItemUM.Value, "CUSCORD")</Value>
+        <Left>5.96825cm</Left>
+      </Textbox>
+      <Textbox Name="textbox77">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>0.88889cm</Width>
+        <Top>17.01587cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!CustomerItemUM.Value, "CUSCORD")</Value>
+        <Left>5.96825cm</Left>
+      </Textbox>
+      <Textbox Name="textbox78">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>3.80952cm</Width>
+        <Top>17.01587cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Total Qty Received:</Value>
+      </Textbox>
+      <Textbox Name="textbox79">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <Format>=ReportLib.Language.GetQtyFormat( First(Fields!DecimalPrecision.Value, "CUSCORD") )</Format>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <Language>= ReportLib.Language.DateLanguage(First(Fields!DateNumberFormat.Value, "SystemConfig"))</Language>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>1.90476cm</Width>
+        <Top>17.01587cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!ReceiptQuantity.Value, "CUSCORD")</Value>
+        <Left>3.93651cm</Left>
+      </Textbox>
+      <Textbox Name="textbox81">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>6.47619cm</Width>
+        <Top>16.38096cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Line Item Closure Requested:</Value>
+        <Left>6.98413cm</Left>
+      </Textbox>
+      <Textbox Name="textbox82">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <Width>1.90476cm</Width>
+        <Top>17.90476cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= First(Fields!Trace.Value, "CUSCORD")</Value>
+        <Left>3.93651cm</Left>
+      </Textbox>
+      <Textbox Name="textbox83">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Width>3.80952cm</Width>
+        <Top>17.90476cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Lot Trace:</Value>
+      </Textbox>
+      <Textbox Name="textbox72">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>7.30158cm</Width>
+        <Top>4.69841cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= Iif( Parameters!ReceiveType.Value = "E", "Backflush Receipt", Iif( Parameters!ReceiveType.Value = "R", "Receipt", Iif( Parameters!ReceiveType.Value = "X", "Reverse Receipt", Iif( Parameters!ReceiveType.Value = "Y","Reverse Backflush", nothing))))</Value>
+        <Left>5.71429cm</Left>
+      </Textbox>
+      <Textbox Name="textbox108">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <Height>0.63492cm</Height>
+        <Width>3.93651cm</Width>
+        <Top>16.38096cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>=Iif(Trim(Parameters!Screen_LineItemClosure.Value)= "~",nothing, Parameters!Screen_LineItemClosure.Value)</Value>
+        <Left>13.5873cm</Left>
+      </Textbox>
+    </ReportItems>
+    <Style>
+      <BorderColor>
+        <Bottom>DarkBlue</Bottom>
+      </BorderColor>
+    </Style>
+    <Height>7.3in</Height>
+    <ColumnSpacing>0in</ColumnSpacing>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="FSDB">
+      <rd:DataSourceID>cb3dd503-37ad-4257-9757-7e7344de9429</rd:DataSourceID>
+      <DataSourceReference>FSDB</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code>Public shared function SetStartItem (ByVal value As string) As String
+	SetStartItem = value
+End Function</Code>
+  <Width>18.79365cm</Width>
+  <DataSets>
+    <DataSet Name="SystemConfig">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateNumberFormat">
+          <DataField>DateNumberFormat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbol">
+          <DataField>CurrencySymbol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencySymbolPlacement">
+          <DataField>CurrencySymbolPlacement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>select 	CompanyName
+	, DateNumberFormat
+	, CurrencySymbol
+	, s.DecimalPrecision
+	, CurrencySymbolPlacement
+from 	FS_SystemConfig s
+	,FS_CurrencyCode c
+where	c.CurrencyCode='00000'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="CUSCORD">
+      <Fields>
+        <Field Name="CONumber">
+          <DataField>CONumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CSR">
+          <DataField>CSR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COStatus">
+          <DataField>COStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COLastMaintainedDate">
+          <DataField>COLastMaintainedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COLineNumber">
+          <DataField>COLineNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RequiredQuantity">
+          <DataField>RequiredQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="UM">
+          <DataField>UM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LineStatus">
+          <DataField>LineStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrderType">
+          <DataField>OrderType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DecimalPrecision">
+          <DataField>DecimalPrecision</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Item">
+          <DataField>Item</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NeedDate">
+          <DataField>NeedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ScheduleDate">
+          <DataField>ScheduleDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ItemDesc">
+          <DataField>ItemDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustOpenQty">
+          <DataField>CustOpenQty</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CustomerItemUM">
+          <DataField>CustomerItemUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerItemUMConversion">
+          <DataField>CustomerItemUMConversion</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CustItem">
+          <DataField>CustItem</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustDesc">
+          <DataField>CustDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InspLab">
+          <DataField>InspLab</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Require">
+          <DataField>Require</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PreLoc">
+          <DataField>PreLoc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Stk">
+          <DataField>Stk</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Bin">
+          <DataField>Bin</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceiptQuantity">
+          <DataField>ReceiptQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Trace">
+          <DataField>Trace</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Lab">
+          <DataField>Lab</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OpenQuantity">
+          <DataField>OpenQuantity</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FSDB</DataSourceName>
+        <CommandText>exec usp_ReportCOReceivingDocument @avcCoNumber , @anLineNumber ,@anSortKey2,  @adtDuedate</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@avcCoNumber">
+            <Value>=Parameters!avcCoNumber.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@anLineNumber">
+            <Value>=Parameters!anLineNumber.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@anSortKey2">
+            <Value>=Parameters!anSortKey2.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@adtDuedate">
+            <Value>=Parameters!adtDuedate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>0.4in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description>Customer Order Receiving Document</Description>
+  <rd:ReportID>9d7f02b0-990c-4098-a34c-6419dbdb043c</rd:ReportID>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="textbox86">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <BorderStyle>
+            <Bottom>Solid</Bottom>
+          </BorderStyle>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <rd:DefaultName>textbox86</rd:DefaultName>
+        <Height>0.63492cm</Height>
+        <Width>4.95238cm</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <Top>0.63492cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value />
+        <Left>2.66667cm</Left>
+      </Textbox>
+      <Textbox Name="textbox84">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>2.53968cm</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <CanGrow>true</CanGrow>
+        <Value>Remarks:</Value>
+      </Textbox>
+      <Textbox Name="textbox85">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>2.53968cm</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <Top>0.63492cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Received By:</Value>
+      </Textbox>
+      <Textbox Name="textbox87">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <BorderStyle>
+            <Bottom>Solid</Bottom>
+          </BorderStyle>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>2.53968cm</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <Top>0.63492cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value />
+        <Left>10.4127cm</Left>
+      </Textbox>
+      <Textbox Name="textbox88">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <Height>0.63492cm</Height>
+        <Width>2.53968cm</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <Top>0.63492cm</Top>
+        <CanGrow>true</CanGrow>
+        <Value>Date:</Value>
+        <Left>7.74603cm</Left>
+      </Textbox>
+      <Textbox Name="RevisionLog">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Width>1.67708in</Width>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Top>0.55in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>="05/10/04 initial revision."</Value>
+        <Left>1.75729in</Left>
+      </Textbox>
+      <Textbox Name="ReportName">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0.25in</Height>
+        <Width>1.67708in</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <Top>0.54062in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>= Globals!ReportName + ".rdl 7.4.02"</Value>
+      </Textbox>
+      <Textbox Name="textbox66">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <BorderStyle>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <Height>0.63492cm</Height>
+        <Width>14.79365cm</Width>
+        <Visibility>
+          <Hidden>=iif(Globals!PageNumber=Globals!TotalPages, false,true)</Hidden>
+        </Visibility>
+        <CanGrow>true</CanGrow>
+        <Value>=Iif(Trim(Parameters!Screen_Remarks.Value)= "~",nothing, Parameters!Screen_Remarks.Value)</Value>
+        <Left>2.66667cm</Left>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.8in</Height>
+  </PageFooter>
+  <BottomMargin>0.4in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="avcCoNumber">
+      <DataType>String</DataType>
+      <Prompt>Customer Order Number</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="anLineNumber">
+      <DataType>String</DataType>
+      <Prompt>Order Line Number</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="adtDuedate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1980-01-01</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Due date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ReceiveType">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Receiving Type</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>E</Value>
+            <Label>Backflush Receipt</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>R</Value>
+            <Label>Receipt</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>X</Value>
+            <Label>Reverse Receipt</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Y</Value>
+            <Label>Reverse Backflush</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Screen_QtyReceived">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_QtyReceived</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_UM">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_UM</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_MoveQty_1">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_MoveQty_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_Stk_1">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_Stk_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_Bin_1">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_Bin_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_IC_1">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_IC_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_InspCode_1">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_InspCode_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_RC_1">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_RC_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_MoveQty_2">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_MoveQty_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_Stk_2">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_Stk_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_Bin_2">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_Bin_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_IC_2">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_IC_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_InspCode_2">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_InspCode_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_RC_2">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_RC_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_MoveQty_3">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_MoveQty_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_Stk_3">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_Stk_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_Bin_3">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_Bin_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_IC_3">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_IC_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_InspCode_3">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_InspCode_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_RC_3">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_RC_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_LineItemClosure">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_LineItemClosure</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Screen_Remarks">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Screen_Remarks</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="anSortKey2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SortKey</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>
