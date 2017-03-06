@@ -45,6 +45,7 @@
         <TargetFolder>Margin Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+        <StartItem>GrossMargin -- Future By Fiscal Period.rdl</StartItem>
       </Options>
     </Configuration>
     <Configuration>
