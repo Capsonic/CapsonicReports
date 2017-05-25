@@ -7,12 +7,7 @@
       <FullPath>FSDBMR.rds</FullPath>
     </ProjectItem>
   </DataSources>
-  <DataSets>
-    <ProjectItem>
-      <Name>InventoryVelocity.rsd</Name>
-      <FullPath>InventoryVelocity.rsd</FullPath>
-    </ProjectItem>
-  </DataSets>
+  <DataSets />
   <Reports>
     <ProjectItem>
       <Name>AUDT - Item History.rdl</Name>
@@ -63,8 +58,8 @@
       <FullPath>SSIL -- Inventory by Location.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Inventory Velocity.rdl</Name>
-      <FullPath>Inventory Velocity.rdl</FullPath>
+      <Name>SSII -- Inventory Velocity.rdl</Name>
+      <FullPath>SSII -- Inventory Velocity.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
