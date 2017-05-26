@@ -1329,12 +1329,16 @@ GROUP BY BUSINESS_TEAM, BT_DESCRIPTION
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="Details" />
+                  <Group Name="Details">
+                    <DocumentMapLabel>=Fields!ITEM.Value</DocumentMapLabel>
+                  </Group>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <RepeatRowHeaders>true</RepeatRowHeaders>
             <FixedColumnHeaders>true</FixedColumnHeaders>
+            <FixedRowHeaders>true</FixedRowHeaders>
             <DataSetName>Detail</DataSetName>
             <Top>0.01389in</Top>
             <Height>0.53333in</Height>
@@ -2502,7 +2506,7 @@ GROUP BY BUSINESS_TEAM, BT_DESCRIPTION
       <Width>7.90002in</Width>
       <Page>
         <PageHeader>
-          <Height>1in</Height>
+          <Height>0.95833in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
