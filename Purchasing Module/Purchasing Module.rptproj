@@ -61,6 +61,10 @@
       <Name>VEND - Vendor Master Report.rdl</Name>
       <FullPath>VEND - Vendor Master Report.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>CVEIT - Costed Vendor Item Cross Reference.rdl</Name>
+      <FullPath>CVEIT - Costed Vendor Item Cross Reference.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
